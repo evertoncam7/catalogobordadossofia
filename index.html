@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="icons/styles.css">
+    <title>CATALOGO DE PRODUTOS</title>
+    <style>
+
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            text-decoration: none;
+        }
+
+        body{
+            background: #fcfcfc;
+        }
+
+        .container{
+            
+            position: absolute;
+            width: 100%;
+            height:100%;
+            
+           
+        }
+
+        header{
+            position: fixed;
+            width: 100%;
+            height: 100px;
+            background: #ff77cd;
+            box-shadow: 0px 0px 3px #000;
+            z-index: 10;
+        }
+        .espaco{
+            width: 100%;
+            height: 100px;
+        }
+
+        section{
+           
+            width: 100%;
+           
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            justify-content: center;
+        }
+        .cont{
+          
+            width: 100%;
+            
+            padding: 10px;
+        }
+
+        .card{
+            width: 100%;
+            margin: 10px 0px;
+            border: 1px solid #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.6);
+            background: #fff;
+        }
+
+        .c50{
+            width: 100%;
+            height: 50%;
+            display: flex;
+           
+            color: #fff;
+            font-size: 8pt;
+        }
+
+        .b2{
+            background: #fc97d5;
+        }
+        .centrar{
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-out{
+            padding: 7px 20px;
+            border: 1px solid #fff;
+            border-radius: 15px;
+            color: #fff;
+            
+            cursor: pointer;
+        }
+        .btn-out:hover{
+            border: 1px solid #ededed;
+            color:#ededed;
+        }
+
+        .bx_foto{
+            width: 100%;
+            height: 250px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           
+        }
+
+        .img{
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .desc{
+            width: 100%;
+            padding: 10px;
+            background: #fff;
+            color: #111;
+           
+            
+        }
+
+        .li_catDesc{
+            font-size: 13pt;
+            font-weight: bold;
+            color: #111;
+        }
+
+        .btn_detalis{
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f2f2f2;
+            color: #222;
+            font-size: 12pt;
+            font-weight: bold;
+        }
+
+        p{
+            font-size: 20pt;
+            color: red;
+        }
+        p span{
+            font-size: 14pt;
+            color: #999;
+            
+            margin:0px 10px;
+
+        }
+
+      
+
+        div .bx_cores{
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            padding: 0px 5px;
+            background: #fff;
+        }
+        div .bx_cores .circle_cores{
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            margin: 0px 5px;
+            background: #fff;
+            border: 1px solid #444;
+            
+        }
+
+        div .bx_cores .circle_cores2{
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            margin: 0px 5px;
+            background: #fff;
+            border: 1px solid #444;
+            
+        }
+
+        .bx_mod{
+
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 15;
+            
+
+        }
+
+        .mod{
+            
+            width: 90%;
+            height: 95%;
+            border-radius: 10px;
+            background: #f2f2f2;        
+            display: none;
+            color: #fff;
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            overflow: hidden;
+            
+
+        }
+
+        .header-mod{
+           
+            width: 100%;
+            height: 40px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0px 20px;
+            color:#111;
+
+        }
+
+        .body-mod{
+
+            width: 100%;
+            height:calc(100% - 40px);
+            background: #f2f2f2;
+            padding: 10px;
+            overflow: auto;
+        }
+
+        .imgModal{
+            width: 100%;
+        }
+
+        .ativacao{
+            border: 4px solid #2eff00 !important;
+        }
+
+        .bx_menu{
+            position: fixed;
+            top: -50px;
+            left: 0px;
+            width: 100%;
+            padding:10px;
+            background: #fff;
+            z-index: 5;
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.6);
+        }
+        .itemM{
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .bx_descriptions{
+            width:100%;
+            height: auto;
+            padding: 10px;
+            overflow: auto !;
+        }
+        .list_desc{
+            padding: 5px 0px;
+            color: #222;
+        }
+        .title-contem{
+            font-size: 13pt;
+            font-weight: bold;
+            color: #111;
+        }
+
+        .col20{
+            width: 20%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 7pt;
+        }
+        .col60{
+            width: 60%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10pt;
+            font-weight: bold;
+        }
+        .menu{
+            font-size: 8pt;
+        }
+        .icon-whatsapp{
+            font-size: 8pt;
+            color: #fff;
+            
+
+        }
+
+        .new-price{
+            color: red;
+            font-size: 22pt;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .old-price{
+            text-decoration: line-through;
+            font-size: 17pt;
+            color: #000;
+        }
+        .separator{
+            padding: 10px 0px;
+
+        }
+
+        .btn_whats{
+            width: 100%;
+            height: 50px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            color: #53ce60;
+            font-weight: bold;
+            font-size: 14pt;
+            border-radius: 10px;
+            border: 1px solid #53ce60;
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
+
+            
+        }
+
+        .img_whats{
+            width: 30px;
+           
+        }
+
+        .whats-header{
+            width: 20px;
+        }
+
+
+
+        @media (min-width: 500px ){
+
+            header{
+                position: relative;
+                
+            }
+            .espaco{
+                width: 100%;
+                height: 0px;
+            }
+            
+            .cont{
+                width: 80%;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .card{
+                width: calc(25% - 40px);
+                margin: 20px;
+                
+            }
+           
+            h1{
+                font-size: 14pt;
+            }
+
+
+            
+
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div id="id-container" class="container">
+
+        <header>
+            <div class="c50 centrar">
+                <h1>BORDADOS SOFIA</h1>
+            </div>
+            <div class="c50 b2">
+                
+                <div class="col20">
+                    <a href=" http://api.whatsapp.com/send?1=pt_BR&phone=5516997660376">
+                            <img class="whats-header" src="icons/w.png" alt="">
+                    </a>
+                </div>
+                <div class="col60">
+                    CATALOGO DE PRODUTOS
+                </div>
+                <div class="col20">
+                    <img class="whats-header menu" src="icons/icon-menu.png" alt="">
+                </div>
+
+            </div>
+        </header>
+        <div class="espaco"></div>
+        <section class="section-cont" id="id-section">
+
+            <div class="cont" id="id-cont">
+
+            </div>
+
+        </section>
+
+    </div>
+    
+</body>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+       
+    
+
+      
+       
+   
+       
+
+      
+    </script>
+</html>
