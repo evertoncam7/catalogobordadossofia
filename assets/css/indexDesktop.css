@@ -1,0 +1,40 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.app{
+    width: 900px;
+    height: 100%;
+    background: #f2f2f2;
+}
+
+header{
+    width: 100%;
+    height: 200px;
+}
+
+.headerp1{
+    width: 100%;
+    height: 60%;
+    background: #fff;
+    color: #ea4f88;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headerp2{
+    width: 100%;
+    height: 40%;
+    background: #ea4f88;
+}
