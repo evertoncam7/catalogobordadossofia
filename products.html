@@ -74,20 +74,47 @@
 
         }).map(function(item1){
 
-            console.log(item1);
+           
 
             const card = document.createElement("div");
             card.setAttribute("class","card");
-                const btn1 = document.createElement("div");
-                btn1.setAttribute("class","plus-square btn1");
-                btn1.innerHTML = "Adicionar a lista de pedidos";
 
-                const btn2 = document.createElement("div");
-                btn2.setAttribute("class","btn2");
-                btn2.innerHTML = "Detalhes do produto";
+                const header_card = document.createElement("div");
+                                        header_card.setAttribute("class","header_card");
+                                        card.appendChild(header_card);
+                                            const header_card_span = document.createElement("div");
+                                            header_card_span.setAttribute("class","icon-ellipsis-h");
+                                            header_card.appendChild(header_card_span);
 
-            card.appendChild(btn1);
-            card.appendChild(btn2);
+                                        const body_card = document.createElement("div");
+                                        body_card.setAttribute("class","body_card");
+                                        card.appendChild(body_card);
+
+                                            const body_bx_img = document.createElement("img");
+                                            body_bx_img.setAttribute("class","body_bx_img");
+                                            body_bx_img.setAttribute("src", item1.url);
+                                            body_card.appendChild(body_bx_img);
+
+                                        const description_card = document.createElement("div");
+                                        description_card.setAttribute("class","description_card");
+                                        description_card.innerHTML = item1.nomeProd;
+                                        card.appendChild(description_card)
+
+                                        
+                                        const footer_card = document.createElement("div");
+                                        footer_card.setAttribute("class","footer_card");
+                                        card.appendChild(footer_card);
+                                        
+                                            const btn1 = document.createElement("div");
+                                            btn1.setAttribute("class","btn1 plus-square");
+                                            btn1.innerHTML = "Adicionar a lista de pedidos";
+
+                                            const btn2 = document.createElement("div");
+                                            btn2.setAttribute("class","btn2");
+                                            btn2.innerHTML = "Detalhes do produto";
+
+                                        footer_card.appendChild(btn1);
+                                        footer_card.appendChild(btn2);
 
             bx_body.appendChild(card);
 

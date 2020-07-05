@@ -63,21 +63,47 @@ function menuDraw(id_cont){
                                     // console.log(d.cat);
                                     console.log(item.title);
                                     return d.cat == item.title; 
-                                }).map(function(){
+                                }).map(function(item){
 
                                     const card = document.createElement("div");
                                     card.setAttribute("class","card");
 
-                                        const btn1 = document.createElement("div");
-                                        btn1.setAttribute("class","btn1 plus-square");
-                                        btn1.innerHTML = "Adicionar a lista de pedidos";
+                                        const header_card = document.createElement("div");
+                                        header_card.setAttribute("class","header_card");
+                                        card.appendChild(header_card);
+                                            const header_card_span = document.createElement("div");
+                                            header_card_span.setAttribute("class","icon-ellipsis-h");
+                                            header_card.appendChild(header_card_span);
 
-                                        const btn2 = document.createElement("div");
-                                        btn2.setAttribute("class","btn2");
-                                        btn2.innerHTML = "Detalhes do produto";
+                                        const body_card = document.createElement("div");
+                                        body_card.setAttribute("class","body_card");
+                                        card.appendChild(body_card);
 
-                                        card.appendChild(btn1);
-                                        card.appendChild(btn2);
+                                            const body_bx_img = document.createElement("img");
+                                            body_bx_img.setAttribute("class","body_bx_img");
+                                            body_bx_img.setAttribute("src", item.url);
+                                            body_card.appendChild(body_bx_img);
+
+                                        const description_card = document.createElement("div");
+                                        description_card.setAttribute("class","description_card");
+                                        description_card.innerHTML = item.nomeProd;
+                                        card.appendChild(description_card);
+
+                                        
+                                        const footer_card = document.createElement("div");
+                                        footer_card.setAttribute("class","footer_card");
+                                        card.appendChild(footer_card);
+                                        
+                                            const btn1 = document.createElement("div");
+                                            btn1.setAttribute("class","btn1 plus-square");
+                                            btn1.innerHTML = "Adicionar a lista de pedidos";
+
+                                            const btn2 = document.createElement("div");
+                                            btn2.setAttribute("class","btn2");
+                                            btn2.innerHTML = "Detalhes do produto";
+
+                                        footer_card.appendChild(btn1);
+                                        footer_card.appendChild(btn2);
 
                                         
 
