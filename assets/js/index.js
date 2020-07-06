@@ -16,7 +16,7 @@ function menuDraw(id_cont){
         {id:1, title: "Minha lista",nomeProd:"Minha Lista", icon: "", slogan:"Casal"},
         {id:1, title: "Edredom",nomeProd:"Edredom Casal", icon: "", slogan:"Casal"},
         {id:1, title: "Edredom",nomeProd:"Edredom Solteiro", icon: "", slogan:"Solteiro"},
-        {id:1, title: "Cortina",nomeProd:"Cortina", icon: "", slogan:null},
+        {id:1, title: "Cortina",nomeProd:"Cortina", icon: "", slogan:"Cortina"},
         {id:1, title: "Coberdrom",nomeProd:"Coberdrom Casal", icon: "", slogan:"Casal"},
         {id:1, title: "Coberdrom",nomeProd:"Coberdrom Solteiro", icon: "", slogan:"Solteiro"},
     ]
