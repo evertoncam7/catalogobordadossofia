@@ -13,10 +13,12 @@ function menuDraw(id_cont){
     console.log(container);
 
     const  menu = [
-        {id:1, title: "Minha lista", icon: ""},
-        {id:1, title: "Edredom", icon: ""},
-        {id:1, title: "Cortina", icon: ""},
-        {id:1, title: "Coberdrom", icon: ""},
+        {id:1, title: "Minha lista",nomeProd:"Minha Lista", icon: "", slogan:"Casal"},
+        {id:1, title: "Edredom",nomeProd:"Edredom Casal", icon: "", slogan:"Casal"},
+        {id:1, title: "Edredom",nomeProd:"Edredom Solteiro", icon: "", slogan:"Solteiro"},
+        {id:1, title: "Cortina",nomeProd:"Cortina", icon: "", slogan:null},
+        {id:1, title: "Coberdrom",nomeProd:"Coberdrom Casal", icon: "", slogan:"Casal"},
+        {id:1, title: "Coberdrom",nomeProd:"Coberdrom Solteiro", icon: "", slogan:"Solteiro"},
     ]
 
     const container_menu = document.createElement("div");
@@ -53,6 +55,7 @@ function menuDraw(id_cont){
                             const hash = location.hash;
                             const pages = hash.split("#");
                             const page = pages[1];
+                            const sc = pages[2];
                             
                             if (page == "products") {
 
@@ -62,7 +65,8 @@ function menuDraw(id_cont){
                                 bd.filter(function(d){
                                     // console.log(d.cat);
                                     console.log(item.title);
-                                    return d.cat == item.title; 
+                                    return d.cat == item.title && d.slogan == item.slogan; 
+
                                 }).map(function(item){
 
                                     const card = document.createElement("div");
@@ -120,12 +124,14 @@ function menuDraw(id_cont){
 
 
                         }else{
-                            location.href = "products.html#products#"+item.title;
+                            
+                            location.href = "products.html#products#"+item.title+"#"+item.slogan;
+
                         }
                         
                         
                     });
-                    menu_draw.innerHTML = item.title;
+                    menu_draw.innerHTML = item.nomeProd;
                     body_draw.appendChild(menu_draw);
 
                 })

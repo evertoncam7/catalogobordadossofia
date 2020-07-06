@@ -70,7 +70,7 @@
 
         const categoria = bd.filter(function(item){
 
-            return product[2] == item.cat;
+            return product[2] == item.cat && product[3] == item.slogan;
 
         }).map(function(item1){
 
