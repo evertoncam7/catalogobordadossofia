@@ -291,6 +291,7 @@
 }
 .body_bx_img{
     width: 100%;
+    border-radius: 5px;
 }
 .footer_card{
     width: auto;
@@ -299,4 +300,44 @@
 
 .icon-ellipsis-h{
     color: #555;
+}
+
+
+.btn-out{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ea4f88;
+    border-radius: 15px;
+    background: none;
+    color: #ea4f88;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+    margin-bottom: 5px;
+}
+
+.btn-out:active{
+    color: #f5259c;
+    border: 1px solid #f5259c;
+}
+
+.btn-in{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ea4f88;
+    border-radius: 15px;
+    background: #ea4f88;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+    margin-bottom: 5px;
+}
+.btn-in:active{
+    border: 1px solid #e64072;
+    background: #e64072;
 }

@@ -99,11 +99,11 @@ function menuDraw(id_cont){
                                         card.appendChild(footer_card);
                                         
                                             const btn1 = document.createElement("div");
-                                            btn1.setAttribute("class","btn1 plus-square");
+                                            btn1.setAttribute("class","btn-in plus-square");
                                             btn1.innerHTML = "Adicionar a lista de pedidos";
 
                                             const btn2 = document.createElement("div");
-                                            btn2.setAttribute("class","btn2");
+                                            btn2.setAttribute("class","btn-out");
                                             btn2.innerHTML = "Detalhes do produto";
 
                                         footer_card.appendChild(btn1);
