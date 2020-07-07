@@ -76,7 +76,10 @@ function menuDraw(id_cont){
                                         header_card.setAttribute("class","header_card");
                                         card.appendChild(header_card);
                                             const header_card_span = document.createElement("div");
-                                            header_card_span.setAttribute("class","icon-ellipsis-h");
+                                            header_card_span.setAttribute("class","icon-ellipsis-v");
+                                            header_card_span.addEventListener("click", function(){
+                                                alert("Download da foto e compartilhar no Facebook");
+                                            });
                                             header_card.appendChild(header_card_span);
 
                                         const body_card = document.createElement("div");
