@@ -111,26 +111,26 @@ function menuDraw(id_cont){
                                                         
                                                             const bx_header_body_btn_span2 = document.createElement("div");
                                                             bx_header_body_btn_span2.setAttribute("class","icon-download");
-                                                            bx_header_body_btn_span2.addEventListener("click", function(){
-                                                                const a = document.createElement("a");
-                                                                a.setAttribute("class", "a");
-                                                                a.setAttribute("href", item.url);
-                                                                a.setAttribute("download", "download");
+                                                            
+                                                            const a = document.createElement("a");
+                                                            a.setAttribute("class", "a");
+                                                            a.setAttribute("href", item.url);
+                                                            a.setAttribute("download", "download");
 
-                                                                    const label = document.createElement("label");
-                                                                    label.setAttribute("class","label");
-                                                                    label.setAttribute("src",item.url);
-                                                                    label.setAttribute("ref",item.id);
-                                                                    label.innerHTML = "BAIXAR ESTA FOTO";
-                                                                    a.appendChild(label);
+                                                                const label = document.createElement("label");
+                                                                label.setAttribute("class","label");
+                                                                label.setAttribute("src",item.url);
+                                                                label.setAttribute("ref",item.id);
+                                                                label.innerHTML = "BAIXAR ESTA FOTO";
+                                                                a.appendChild(label);
 
-                                                                    const img = document.createElement("img");
-                                                                    img.setAttribute("id",item.id);
-                                                                    label.appendChild(img);
+                                                                const img = document.createElement("img");
+                                                                img.setAttribute("id",item.id);
+                                                                label.appendChild(img);
 
                                                                 
-                                                                bx_header_body_btn_span2.appendChild(a);
-                                                            });
+                                                            bx_header_body_btn_span2.appendChild(a);
+                                                           
                                                             // bx_header_body_btn_span2.innerHTML = "BAIXAR ESTA FOTO";
                                                             bx_header_body_btn2.appendChild(bx_header_body_btn_span2);
 
