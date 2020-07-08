@@ -111,6 +111,14 @@ function menuDraw(id_cont){
                                                         
                                                             const bx_header_body_btn_span2 = document.createElement("div");
                                                             bx_header_body_btn_span2.setAttribute("class","icon-download");
+                                                            bx_header_body_btn_span2.addEventListener("click", function(){
+                                                                const a = document.createElement("a");
+                                                                a.setAttribute("class", "a");
+                                                                a.setAttribute("href", item.url);
+                                                                a.setAttribute("download", "download");
+                                                                
+                                                                bx_header_body_btn_span2.appendChild(a);
+                                                            });
                                                             bx_header_body_btn_span2.innerHTML = "BAIXAR ESTA FOTO";
                                                             bx_header_body_btn2.appendChild(bx_header_body_btn_span2);
 
