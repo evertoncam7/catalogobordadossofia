@@ -78,7 +78,47 @@ function menuDraw(id_cont){
                                             const header_card_span = document.createElement("div");
                                             header_card_span.setAttribute("class","icon-ellipsis-v");
                                             header_card_span.addEventListener("click", function(){
-                                                alert("Download da foto e compartilhar no Facebook");
+                                                // alert("Download da foto e compartilhar no Facebook");
+
+                                                const bx_header = document.createElement("div");
+                                                bx_header.setAttribute("class","bx_header");
+                                                card.appendChild(bx_header);
+
+                                                    const bx_header_header = document.createElement("div");
+                                                    bx_header_header.setAttribute("class","bx_header_header");
+                                                    bx_header.appendChild(bx_header_header);
+
+                                                        const bx_header_header_closed = document.createElement("span");
+                                                        bx_header_header_closed.setAttribute("class","icon-times-circle");
+                                                        bx_header_header.appendChild(bx_header_header_closed);
+
+                                                    const bx_header_body = document.createElement("div");
+                                                    bx_header_body.setAttribute("class","bx_header_body");
+                                                    bx_header.appendChild(bx_header_body);
+
+                                                        const bx_header_body_btn = document.createElement("div");
+                                                        bx_header_body_btn.setAttribute("class","bx_header_body_btn");
+                                                        bx_header_body.appendChild(bx_header_body_btn);
+
+                                                            const bx_header_body_btn_span = document.createElement("div");
+                                                            bx_header_body_btn_span.setAttribute("class","icon-facebook-square");
+                                                            bx_header_body_btn_span.innerHTML = "COMPARTILHAR NO FACEBOOK";
+                                                            bx_header_body_btn.appendChild(bx_header_body_btn_span);
+
+                                                        const bx_header_body_btn2 = document.createElement("div");
+                                                        bx_header_body_btn2.setAttribute("class","bx_header_body_btn");
+                                                        bx_header_body.appendChild(bx_header_body_btn2);
+                                                        
+                                                            const bx_header_body_btn_span2 = document.createElement("div");
+                                                            bx_header_body_btn_span2.setAttribute("class","icon-download");
+                                                            bx_header_body_btn_span2.innerHTML = "BAIXAR ESTA FOTO";
+                                                            bx_header_body_btn2.appendChild(bx_header_body_btn_span2);
+
+
+                                               
+                                                
+
+
                                             });
                                             header_card.appendChild(header_card_span);
 
@@ -170,5 +210,12 @@ $("body").click(function(e){
         })
         
     }
+});
+
+
+$("body").on("click", ".icon-times-circle",function(){
+    $(this).parent().parent().fadeOut(function(){
+        $(this).remove();
+    });
 });
 
