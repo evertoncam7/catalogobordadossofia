@@ -114,13 +114,18 @@ function menuDraw(id_cont){
                                                             
                                                             const a = document.createElement("a");
                                                             a.setAttribute("class", "a");
-                                                            a.setAttribute("href", item.url);
+                                                            // a.setAttribute("href", item.url);
                                                             a.setAttribute("download", "download");
 
                                                                 const label = document.createElement("label");
                                                                 label.setAttribute("class","label");
                                                                 label.setAttribute("src",item.url);
                                                                 label.setAttribute("ref",item.id);
+                                                                label.addEventListener("click", function(){
+                                                                    $(this).parent().parent().parent().parent().parent().fadeOut(function(){
+                                                                        $(this).remove();
+                                                                    });
+                                                                });
                                                                 label.innerHTML = "BAIXAR ESTA FOTO";
                                                                 a.appendChild(label);
 

@@ -96,7 +96,7 @@
 
             return product[2] == item.cat && product[3] == item.slogan;
 
-        }).map(function(item1){
+        }).map(function(item1, index){
 
            
 
@@ -147,12 +147,17 @@
                                                             const a = document.createElement("a");
                                                             a.setAttribute("class", "a");
                                                             a.setAttribute("href", item1.url);
-                                                            a.setAttribute("download", "download");
+                                                            a.setAttribute("download", "download"+index);
 
                                                                 const label = document.createElement("label");
                                                                 label.setAttribute("class","label");
                                                                 label.setAttribute("src",item1.url);
                                                                 label.setAttribute("ref",item1.id);
+                                                                label.addEventListener("click", function(){
+                                                                    $(this).parent().parent().parent().parent().parent().fadeOut(function(){
+                                                                        $(this).remove();
+                                                                    });
+                                                                });
                                                                 label.innerHTML = "BAIXAR ESTA FOTO";
                                                                 a.appendChild(label);
 
