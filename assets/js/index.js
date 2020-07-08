@@ -116,6 +116,11 @@ function menuDraw(id_cont){
                                                                 a.setAttribute("class", "a");
                                                                 a.setAttribute("href", item.url);
                                                                 a.setAttribute("download", "download");
+
+                                                                    const img = document.createElement("img");
+                                                                    img.setAttribute("src",item.url);
+                                                                    a.appendChild(img);
+
                                                                 
                                                                 bx_header_body_btn_span2.appendChild(a);
                                                             });
