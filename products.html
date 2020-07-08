@@ -142,7 +142,27 @@
                                                         
                                                             const bx_header_body_btn_span2 = document.createElement("div");
                                                             bx_header_body_btn_span2.setAttribute("class","icon-download");
-                                                            bx_header_body_btn_span2.innerHTML = "BAIXAR ESTA FOTO";
+                                                           
+
+                                                            const a = document.createElement("a");
+                                                            a.setAttribute("class", "a");
+                                                            a.setAttribute("href", item1.url);
+                                                            a.setAttribute("download", "download");
+
+                                                                const label = document.createElement("label");
+                                                                label.setAttribute("class","label");
+                                                                label.setAttribute("src",item1.url);
+                                                                label.setAttribute("ref",item1.id);
+                                                                label.innerHTML = "BAIXAR ESTA FOTO";
+                                                                a.appendChild(label);
+
+                                                                const img = document.createElement("img");
+                                                                img.setAttribute("id",item1.id);
+                                                                label.appendChild(img);
+
+                                                                
+                                                            bx_header_body_btn_span2.appendChild(a);
+                                                           
                                                             bx_header_body_btn2.appendChild(bx_header_body_btn_span2);
 
                                                 

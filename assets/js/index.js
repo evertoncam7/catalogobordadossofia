@@ -131,7 +131,6 @@ function menuDraw(id_cont){
                                                                 
                                                             bx_header_body_btn_span2.appendChild(a);
                                                            
-                                                            // bx_header_body_btn_span2.innerHTML = "BAIXAR ESTA FOTO";
                                                             bx_header_body_btn2.appendChild(bx_header_body_btn_span2);
 
 
