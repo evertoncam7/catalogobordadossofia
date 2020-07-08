@@ -117,14 +117,20 @@ function menuDraw(id_cont){
                                                                 a.setAttribute("href", item.url);
                                                                 a.setAttribute("download", "download");
 
+                                                                    const label = document.createElement("img");
+                                                                    label.setAttribute("src",item.url);
+                                                                    label.setAttribute("ref",item.id);
+                                                                    label.innerHTML = "BAIXAR ESTA FOTO";
+                                                                    a.appendChild(label);
+
                                                                     const img = document.createElement("img");
-                                                                    img.setAttribute("src",item.url);
-                                                                    a.appendChild(img);
+                                                                    img.setAttribute("id",item.id);
+                                                                    label.appendChild(img);
 
                                                                 
                                                                 bx_header_body_btn_span2.appendChild(a);
                                                             });
-                                                            bx_header_body_btn_span2.innerHTML = "BAIXAR ESTA FOTO";
+                                                            // bx_header_body_btn_span2.innerHTML = "BAIXAR ESTA FOTO";
                                                             bx_header_body_btn2.appendChild(bx_header_body_btn_span2);
 
 
