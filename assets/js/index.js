@@ -114,7 +114,7 @@ function menuDraw(id_cont){
                                                             
                                                             const a = document.createElement("a");
                                                             a.setAttribute("class", "a");
-                                                            // a.setAttribute("href", item.url);
+                                                            a.setAttribute("href", item.url);
                                                             a.setAttribute("download", "download"+index);
 
                                                                 const label = document.createElement("label");
