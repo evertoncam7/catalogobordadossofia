@@ -117,7 +117,8 @@ function menuDraw(id_cont){
                                                                 a.setAttribute("href", item.url);
                                                                 a.setAttribute("download", "download");
 
-                                                                    const label = document.createElement("img");
+                                                                    const label = document.createElement("label");
+                                                                    label.setAttribute("class","label");
                                                                     label.setAttribute("src",item.url);
                                                                     label.setAttribute("ref",item.id);
                                                                     label.innerHTML = "BAIXAR ESTA FOTO";
