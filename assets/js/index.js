@@ -67,7 +67,7 @@ function menuDraw(id_cont){
                                     console.log(item.title);
                                     return d.cat == item.title && d.slogan == item.slogan; 
 
-                                }).map(function(item){
+                                }).map(function(item, index){
 
                                     const card = document.createElement("div");
                                     card.setAttribute("class","card");
@@ -115,7 +115,7 @@ function menuDraw(id_cont){
                                                             const a = document.createElement("a");
                                                             a.setAttribute("class", "a");
                                                             // a.setAttribute("href", item.url);
-                                                            a.setAttribute("download", "download");
+                                                            a.setAttribute("download", "download"+index);
 
                                                                 const label = document.createElement("label");
                                                                 label.setAttribute("class","label");
