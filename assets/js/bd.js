@@ -25,7 +25,6 @@ createProduct(2, "Edredom - Rebeca", 38, "Edredom", "Solteiro","2,90 x 2,90","as
 // CORTINA
 createProduct(2, "Melissa", 38, "Cortina", "Cortina","2,90 x 2,90","assets/imagens/cortina/cortina1.jpeg");
 createProduct(2, "Melissa", 38, "Cortina", "Cortina","2,90 x 2,90","assets/imagens/cortina/cortina2.jpeg");
-createProduct(2, "Melissa", 38, "Cortina", "Cortina","2,90 x 2,90","assets/imagens/cortina/cortina3.jpeg");
 createProduct(2, "Melissa", 38, "Cortina", "Cortina","2,90 x 2,90","assets/imagens/cortina/cortina4.jpeg");
 createProduct(2, "Melissa", 38, "Cortina", "Cortina","2,90 x 2,90","assets/imagens/cortina/cortina5.jpeg");
 createProduct(2, "Melissa", 38, "Cortina", "Cortina","2,90 x 2,90","assets/imagens/cortina/cortina6.jpeg");
