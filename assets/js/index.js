@@ -59,12 +59,20 @@ function menuDraw(id_cont){
                             
                             if (page == "products") {
 
+                                location.href = "products.html#products#"+item.title+"#"+item.slogan;
+
+
+                                const urll = location.hash;
+                                const productp = urll.split("#");
+
+                                console.log("url atual "+productp);
+
                                 const id_page_prod = document.getElementById("id_body_products");
                                 id_page_prod.innerHTML = "";
 
                                 bd.filter(function(d){
                                     // console.log(d.cat);
-                                    console.log(item.title);
+                                    // console.log(item.title);
                                     return d.cat == item.title && d.slogan == item.slogan; 
 
                                 }).map(function(item, index){
@@ -137,10 +145,6 @@ function menuDraw(id_cont){
                                                             bx_header_body_btn_span2.appendChild(a);
                                                            
                                                             bx_header_body_btn2.appendChild(bx_header_body_btn_span2);
-
-
-                                               
-                                                
 
 
                                             });
