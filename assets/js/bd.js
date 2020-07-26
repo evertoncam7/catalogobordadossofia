@@ -15,7 +15,18 @@ createProduct("casal" + 1,
     "assets/imagens/r/IMG-20200616-WA0005.jpg",
     [
         {"type":"title", "content":"Edredom Juliana"},
-        {"type":"description", "content":"Tamanho"}
+        {"type":"description", "content":"Tamanho"},
+        {"type":"title", "content":"Modo de Lavar"},
+        {"type":"description", "content":"Tamanho"},
+        {"type":"description", "content":"Tamanho"},
+        {"type":"description", "content":"Tamanho"},
+        {"type":"description", "content":"Tamanho"},
+        {"type":"description", "content":"Tamanho"},
+        {"type":"description", "content":"Tamanho"},
+        {"type":"description", "content":"Tamanho"},
+        {"type":"description", "content":"Tamanho"},
+        {"type":"description", "content":"Tamanho"},
+        {"type":"description", "content":"Tamanho"},
     ]
 );
 

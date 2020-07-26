@@ -402,6 +402,7 @@ body{
     width: 100%;
     height: 100%;
     background: #e2e2e2e2;
+    overflow: auto;
 }
 
 .bx_image_img{
@@ -419,9 +420,10 @@ body{
     font-weight: bold;
     color: #111;
     padding: 10px;
+       
 }
 .li_desc_desc{
-    color: #777;
+    color: #444;
     margin: 5px 10px;
 }
 
