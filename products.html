@@ -15,18 +15,18 @@
         <div class="header">
             <div class="h60">
                 <div class="h6020">
-                    <span class="icon-long-arrow-left"></span>
+                    <span class="linkbtn icon-long-arrow-left"></span>
                 </div>
                 <div class="h6060">
                     <span>BORDADOS SOFIA</span>
                 </div>
                 <div class="h6020">
-                    <span class="icon-basket">143</span>
+                    <span class="linkbtn icon-basket">0</span>
                 </div>
                 
             </div>
             <div class="h40">
-                <div class="h4020">
+                <div class="linkbtn h4020">
                     <span class="icon-whatsapp"></span>
                 </div>
                 <div class="h4060">
@@ -57,9 +57,7 @@
 
     <script>
 
-    
-
-
+        
 
         window.addEventListener("load", function(){
             
@@ -140,6 +138,7 @@
                                                                 label.setAttribute("class","label");
                                                                 label.setAttribute("src",item1.url);
                                                                 label.setAttribute("ref",item1.id);
+                                                                
                                                                 label.addEventListener("click", function(){
                                                                     $(this).parent().parent().parent().parent().parent().fadeOut(function(){
                                                                         $(this).remove();
@@ -150,6 +149,7 @@
 
                                                                 const img = document.createElement("img");
                                                                 img.setAttribute("id",item1.id);
+                                                                
                                                                 label.appendChild(img);
 
                                                                 
@@ -170,6 +170,9 @@
                                             const body_bx_img = document.createElement("img");
                                             body_bx_img.setAttribute("class","body_bx_img");
                                             body_bx_img.setAttribute("src", item1.url);
+                                            body_bx_img.addEventListener("click", function(){
+                                                fnProduct(item1.id);
+                                            } );
                                             body_card.appendChild(body_bx_img);
 
                                         const description_card = document.createElement("div");
@@ -189,6 +192,9 @@
                                             const btn2 = document.createElement("div");
                                             btn2.setAttribute("class","btn-out");
                                             btn2.innerHTML = "Detalhes do produto";
+                                            btn2.addEventListener("click", function(){
+                                                fnProduct(item1.id);
+                                            } );
 
                                         footer_card.appendChild(btn1);
                                         footer_card.appendChild(btn2);

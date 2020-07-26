@@ -1,6 +1,14 @@
 
 
+// FUNÇÕES
 
+function fnProduct( id ){
+    // alert("deu certo! " + id);
+
+    location.href = "product.html#" + id;
+
+
+}
 
 
 
@@ -10,10 +18,12 @@ function menuDraw(id_cont){
 
     const container = document.getElementById(id_cont);
 
-    console.log(container);
+    // console.log(container);
 
     const  menu = [
-        {id:1, title: "Minha lista",nomeProd:"Minha Lista", icon: "", slogan:"Casal"},
+        {id:1, title: "Quem somos",nomeProd:"Quem somos", icon: "", slogan:"-"},
+        {id:1, title: "Contatos",nomeProd:"Contatos", icon: "", slogan:"-"},
+        {id:1, title: "Minha lista",nomeProd:"Minha Lista", icon: "", slogan:"-"},
         {id:1, title: "Edredom",nomeProd:"Edredom Casal", icon: "", slogan:"Casal"},
         {id:1, title: "Edredom",nomeProd:"Edredom Solteiro", icon: "", slogan:"Solteiro"},
         {id:1, title: "Cortina",nomeProd:"Cortina", icon: "", slogan:"Cortina"},
@@ -43,7 +53,11 @@ function menuDraw(id_cont){
 
                     const menu_draw = document.createElement("div");
                     if (item.title == "Minha lista") {
-                        menu_draw.setAttribute("class","menu_draw icon-basket");
+                        menu_draw.setAttribute("class","menu_draw b2 icon-basket");
+                    }else if(item.title == "Quem somos"){
+                        menu_draw.setAttribute("class","menu_draw b2 icon-star-1");
+                    }else if(item.title == "Contatos"){
+                        menu_draw.setAttribute("class","menu_draw b2 icon-envelope");
                     }else{
                         menu_draw.setAttribute("class","menu_draw icon-tag");
                     }
@@ -157,6 +171,9 @@ function menuDraw(id_cont){
                                             const body_bx_img = document.createElement("img");
                                             body_bx_img.setAttribute("class","body_bx_img");
                                             body_bx_img.setAttribute("src", item.url);
+                                            body_bx_img.addEventListener("click", function(){
+                                                fnProduct(item.id);
+                                            } );
                                             body_card.appendChild(body_bx_img);
 
                                         const description_card = document.createElement("div");
@@ -176,6 +193,9 @@ function menuDraw(id_cont){
                                             const btn2 = document.createElement("div");
                                             btn2.setAttribute("class","btn-out");
                                             btn2.innerHTML = "Detalhes do produto";
+                                            btn2.addEventListener("click", function(){
+                                                fnProduct(item.id);
+                                            } );
 
                                         footer_card.appendChild(btn1);
                                         footer_card.appendChild(btn2);
