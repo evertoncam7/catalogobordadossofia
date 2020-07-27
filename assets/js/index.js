@@ -79,7 +79,7 @@ function menuDraw(id_cont){
                                 const urll = location.hash;
                                 const productp = urll.split("#");
 
-                                console.log("url atual "+productp);
+                                // console.log("url atual "+productp);
 
                                 const id_page_prod = document.getElementById("id_body_products");
                                 id_page_prod.innerHTML = "";

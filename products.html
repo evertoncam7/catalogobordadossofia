@@ -83,127 +83,170 @@
 
         }).map(function(item1, index){
 
-           
+            let img = item1.url;
 
             const card = document.createElement("div");
             card.setAttribute("class","card");
 
                 const header_card = document.createElement("div");
-                                        header_card.setAttribute("class","header_card");
-                                        card.appendChild(header_card);
-                                            const header_card_span = document.createElement("div");
-                                            header_card_span.setAttribute("class","icon-ellipsis-v");
-                                            header_card_span.addEventListener("click", function(){
+                header_card.setAttribute("class","header_card");
+                card.appendChild(header_card);
+                    const header_card_span = document.createElement("div");
+                    header_card_span.setAttribute("class","icon-ellipsis-v");
+                    header_card_span.addEventListener("click", function(){
 
 
-                                                const bx_header = document.createElement("div");
-                                                bx_header.setAttribute("class","bx_header");
-                                                card.appendChild(bx_header);
+                        const bx_header = document.createElement("div");
+                        bx_header.setAttribute("class","bx_header");
+                        card.appendChild(bx_header);
 
-                                                    const bx_header_header = document.createElement("div");
-                                                    bx_header_header.setAttribute("class","bx_header_header");
-                                                    bx_header.appendChild(bx_header_header);
+                            const bx_header_header = document.createElement("div");
+                            bx_header_header.setAttribute("class","bx_header_header");
+                            bx_header.appendChild(bx_header_header);
 
-                                                        const bx_header_header_closed = document.createElement("span");
-                                                        bx_header_header_closed.setAttribute("class","icon-times-circle");
-                                                        bx_header_header.appendChild(bx_header_header_closed);
+                                const bx_header_header_closed = document.createElement("span");
+                                bx_header_header_closed.setAttribute("class","icon-times-circle");
+                                bx_header_header.appendChild(bx_header_header_closed);
 
-                                                    const bx_header_body = document.createElement("div");
-                                                    bx_header_body.setAttribute("class","bx_header_body");
-                                                    bx_header.appendChild(bx_header_body);
+                            const bx_header_body = document.createElement("div");
+                            bx_header_body.setAttribute("class","bx_header_body");
+                            bx_header.appendChild(bx_header_body);
 
-                                                        const bx_header_body_btn = document.createElement("div");
-                                                        bx_header_body_btn.setAttribute("class","bx_header_body_btn");
-                                                        bx_header_body.appendChild(bx_header_body_btn);
+                                const bx_header_body_btn = document.createElement("div");
+                                bx_header_body_btn.setAttribute("class","bx_header_body_btn");
+                                bx_header_body.appendChild(bx_header_body_btn);
 
-                                                            const bx_header_body_btn_span = document.createElement("div");
-                                                            bx_header_body_btn_span.setAttribute("class","icon-facebook-square");
-                                                            bx_header_body_btn_span.innerHTML = "COMPARTILHAR NO FACEBOOK";
-                                                            bx_header_body_btn.appendChild(bx_header_body_btn_span);
+                                    const bx_header_body_btn_span = document.createElement("div");
+                                    bx_header_body_btn_span.setAttribute("class","icon-facebook-square");
+                                    bx_header_body_btn_span.innerHTML = "COMPARTILHAR NO FACEBOOK";
+                                    bx_header_body_btn.appendChild(bx_header_body_btn_span);
 
-                                                        const bx_header_body_btn2 = document.createElement("div");
-                                                        bx_header_body_btn2.setAttribute("class","bx_header_body_btn");
-                                                        bx_header_body.appendChild(bx_header_body_btn2);
-                                                        
-                                                            const bx_header_body_btn_span2 = document.createElement("div");
-                                                            bx_header_body_btn_span2.setAttribute("class","icon-download");
-                                                           
+                                const bx_header_body_btn2 = document.createElement("div");
+                                bx_header_body_btn2.setAttribute("class","bx_header_body_btn");
+                                bx_header_body.appendChild(bx_header_body_btn2);
+                                
+                                    const bx_header_body_btn_span2 = document.createElement("div");
+                                    bx_header_body_btn_span2.setAttribute("class","icon-download");
+                                    
 
-                                                            const a = document.createElement("a");
-                                                            a.setAttribute("class", "a");
-                                                            a.setAttribute("href", item1.url);
-                                                            a.setAttribute("download", "download"+index);
+                                    const a = document.createElement("a");
+                                    a.setAttribute("class", "a");
+                                    a.setAttribute("href", item1.url);
+                                    a.setAttribute("download", "download"+index);
 
-                                                                const label = document.createElement("label");
-                                                                label.setAttribute("class","label");
-                                                                label.setAttribute("src",item1.url);
-                                                                label.setAttribute("ref",item1.id);
-                                                                
-                                                                label.addEventListener("click", function(){
-                                                                    $(this).parent().parent().parent().parent().parent().fadeOut(function(){
-                                                                        $(this).remove();
-                                                                    });
-                                                                });
-                                                                label.innerHTML = "BAIXAR ESTA FOTO";
-                                                                a.appendChild(label);
-
-                                                                const img = document.createElement("img");
-                                                                img.setAttribute("id",item1.id);
-                                                                
-                                                                label.appendChild(img);
-
-                                                                
-                                                            bx_header_body_btn_span2.appendChild(a);
-                                                           
-                                                            bx_header_body_btn2.appendChild(bx_header_body_btn_span2);
-
-                                                
-                                                
-
+                                        const label = document.createElement("label");
+                                        label.setAttribute("class","label");
+                                        label.setAttribute("src",item1.url);
+                                        label.setAttribute("ref",item1.id);
+                                        
+                                        label.addEventListener("click", function(){
+                                            $(this).parent().parent().parent().parent().parent().fadeOut(function(){
+                                                $(this).remove();
                                             });
-                                            header_card.appendChild(header_card_span);
+                                        });
+                                        label.innerHTML = "BAIXAR ESTA FOTO";
+                                        a.appendChild(label);
 
-                                        const body_card = document.createElement("div");
-                                        body_card.setAttribute("class","body_card");
-                                        card.appendChild(body_card);
-
-                                            const body_bx_img = document.createElement("img");
-                                            body_bx_img.setAttribute("class","body_bx_img");
-                                            body_bx_img.setAttribute("src", item1.url);
-                                            body_bx_img.addEventListener("click", function(){
-                                                fnProduct(item1.id);
-                                            } );
-                                            body_card.appendChild(body_bx_img);
-
-                                        const description_card = document.createElement("div");
-                                        description_card.setAttribute("class","description_card");
-                                        description_card.innerHTML = item1.nomeProd;
-                                        card.appendChild(description_card)
+                                        const img = document.createElement("img");
+                                        img.setAttribute("id",item1.id);
+                                        
+                                        label.appendChild(img);
 
                                         
-                                        const footer_card = document.createElement("div");
-                                        footer_card.setAttribute("class","footer_card");
-                                        card.appendChild(footer_card);
+                                        bx_header_body_btn_span2.appendChild(a);
                                         
-                                            const btn1 = document.createElement("div");
-                                            btn1.setAttribute("class","btn-in plus-square");
-                                            btn1.innerHTML = "Adicionar a lista de pedidos";
+                                        bx_header_body_btn2.appendChild(bx_header_body_btn_span2);
 
-                                            const btn2 = document.createElement("div");
-                                            btn2.setAttribute("class","btn-out");
-                                            btn2.innerHTML = "Detalhes do produto";
-                                            btn2.addEventListener("click", function(){
-                                                fnProduct(item1.id);
-                                            } );
+                    });
+                    header_card.appendChild(header_card_span);
 
-                                        footer_card.appendChild(btn1);
-                                        footer_card.appendChild(btn2);
+                    const body_card = document.createElement("div");
+                    body_card.setAttribute("class","body_card");
+                    card.appendChild(body_card);
+
+                        const body_bx_img = document.createElement("img");
+                        body_bx_img.setAttribute("class","body_bx_img");
+                        body_bx_img.setAttribute("src", img);
+                        body_bx_img.addEventListener("click", function(){
+                            fnProduct(item1.id);
+                        } );
+                        body_card.appendChild(body_bx_img);
+
+                    const description_card = document.createElement("div");
+                    description_card.setAttribute("class","description_card");
+                    
+                    card.appendChild(description_card);
+
+                        const description_card_nome = document.createElement("div");
+                        description_card_nome.setAttribute("class","description_card_nome");
+                        description_card_nome.innerHTML = item1.nomeProd;
+                        description_card.appendChild(description_card_nome);
+
+                        const description_card_cores = document.createElement("div");
+                        description_card_cores.setAttribute("class","description_card_cores");
+                        description_card.appendChild(description_card_cores);
+
+                        if (item1.cores) {
+
+                            item1.cores.map(function(item, index){
+                                
+                                const description_card_cores_circle = document.createElement("div");
+                                description_card_cores_circle.setAttribute("class","description_card_cores_circle");
+                                description_card_cores_circle.style.background = item.cod;
+
+                                if (index == 0) {
+                                    description_card_cores_circle.style.border = "3px solid #fff";
+                                }
+
+                                description_card_cores_circle.addEventListener("click", function(){
+
+                                    const classes = document.getElementsByClassName("description_card_cores_circle");
+                                    for (let index = 0; index < classes.length; index++) {
+                                        const element = classes[index];
+
+                                        element.style.border = "none";
+                                        
+                                    }
+
+                                    this.style.border = "3px solid #fff";
+                                   
+                                    if (item.url) {
+                                        img = item.url;
+                                        body_bx_img.setAttribute("src", img);
+                                    }
+                                    
+                                });
+
+                                description_card_cores.appendChild(description_card_cores_circle);
+
+                            });  
+                            
+                        }
+
+                        const description_card_price = document.createElement("div");
+                        description_card_price.setAttribute("class","description_card_price");
+                        description_card_price.innerHTML = item1.price;
+                        description_card.appendChild(description_card_price);
+                    
+                    const footer_card = document.createElement("div");
+                    footer_card.setAttribute("class","footer_card");
+                    card.appendChild(footer_card);
+                    
+                        const btn1 = document.createElement("div");
+                        btn1.setAttribute("class","btn-in plus-square");
+                        btn1.innerHTML = "Adicionar a lista de pedidos";
+
+                        const btn2 = document.createElement("div");
+                        btn2.setAttribute("class","btn-out");
+                        btn2.innerHTML = "Detalhes do produto";
+                        btn2.addEventListener("click", function(){
+                            fnProduct(item1.id);
+                        } );
+
+                    footer_card.appendChild(btn1);
+                    footer_card.appendChild(btn2);
 
             bx_body.appendChild(card);
-
-
-
-
 
 
         });

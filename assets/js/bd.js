@@ -2,31 +2,51 @@
 
 const bd = [];
 
-function createProduct(id, nomeProd, price, cat, slogan, desc, url, descri){
-    bd.push({id:id, nomeProd:nomeProd, price:price , cat:cat, url:url, slogan:slogan, desc:descri});
+function createProduct(id, nomeProd, price, cat, slogan, desc, url, cor,descri){
+    bd.push({id:id, nomeProd:nomeProd, price:price , cat:cat, url:url, slogan:slogan, cores:cor, desc:descri});
 }
 
 
 // CASAL
 createProduct("casal" + 1,
-    "Edredom - Juliana", 
+    "Cobre Leito casal -  Juliana", 
     38, "Edredom", 
     "Casal","2,90 x 2,90",
     "assets/imagens/r/IMG-20200616-WA0005.jpg",
     [
-        {"type":"title", "content":"Edredom Juliana"},
-        {"type":"description", "content":"Tamanho"},
-        {"type":"title", "content":"Modo de Lavar"},
-        {"type":"description", "content":"Tamanho"},
-        {"type":"description", "content":"Tamanho"},
-        {"type":"description", "content":"Tamanho"},
-        {"type":"description", "content":"Tamanho"},
-        {"type":"description", "content":"Tamanho"},
-        {"type":"description", "content":"Tamanho"},
-        {"type":"description", "content":"Tamanho"},
-        {"type":"description", "content":"Tamanho"},
-        {"type":"description", "content":"Tamanho"},
-        {"type":"description", "content":"Tamanho"},
+        {"cor":"Rose", "cod":"#eca5b6", "url":"assets/imagens/r/IMG-20200616-WA0005.jpg"},
+        {"cor":"Azul", "cod":"#3ac2eb", "url":"assets/imagens/r/IMG-20200616-WA0006.jpg"},
+        {"cor":"Cinza", "cod":"#424b50", "url":"assets/imagens/r/IMG-20200616-WA0007.jpg"},
+    ],
+    [
+        {"type":"title", "content":"Kit Casal Quem 9 Peças"},
+        {"type":"description", "content":"Contém"},
+        {"type":"description", "content":"01 Cobre leito 2,60m x 2,60m"},
+        {"type":"description", "content":"02 Porta Travesseiro 70cm x 50cm"},
+        {"type":"description", "content":"02 Almofadaa 48cm x 48cm"},
+        {"type":"description", "content":"02 Refis de Travesseiro 65cm x 45cm"},
+        {"type":"description", "content":"02 Refis de Almofada 48cm x 48cm"},
+
+        {"type":"title", "content":"Kit Casal King 9 peças"},
+        {"type":"description", "content":"Contém"},
+        {"type":"description", "content":"01 Cobre leito 2,90m x 2,80m"},
+        {"type":"description", "content":"02 Porta Travesseiro 70cm x 50cm"},
+        {"type":"description", "content":"02 Almofadaa 48cm x 48cm"},
+        {"type":"description", "content":"02 Refis de Travesseiro 65cm x 45cm"},
+        {"type":"description", "content":"02 Refis de Almofada 48cm x 48cm"},
+
+        {"type":"title", "content":"Conposição Cobre leito"},
+        {"type":"description", "content":"Tecido estampado: 80% Algodão 20% Poliéster"},
+        {"type":"description", "content":"Tecido liso: 100% Poliéster"},
+        {"type":"description", "content":"Enchimento: 100% Poliéster "},
+
+        {"type":"title", "content":"Composição dos Refis"},
+        {"type":"description", "content":"Externo: 100% Polipropeno"},
+        {"type":"description", "content":"Enchomento: 100% Poliuretano"},
+
+        {"type":"title", "content":"Instruções de Lavagem"},
+        {"type":"description", "content":"Vide etiqueta interna do produto"},
+        
     ]
 );
 
@@ -37,8 +57,13 @@ createProduct("casal" + 2,
     "2,90 x 2,90",
     "assets/imagens/r/IMG-20200616-WA0008.jpg",
     [
+        {"cor":"Vermelho", "cod":"#da0904", "url":"assets/imagens/r/IMG-20200616-WA0008.jpg"},
+        {"cor":"Azul Marinho", "cod":"#032451", "url":"assets/imagens/r/IMG-20200616-WA0009.jpg"},
+      
+    ],
+    [
         {"type":"title", "content":"Edredom Giovana"},
-        {"type":"description", "content":"Tamanho"}
+        {"type":"description", "content":"Tamanho"},
     ]
     );
 createProduct("casal" + 3, "Edredom - Melissa", 38, "Edredom", "Casal","2,90 x 2,90","assets/imagens/r/IMG-20200616-WA0010.jpg");

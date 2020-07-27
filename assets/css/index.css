@@ -398,15 +398,26 @@ body{
 
 /* PAGE PRODUCT */
 
-.body-product{
+.container-product{
+    position: absolute;
     width: 100%;
     height: 100%;
-    background: #e2e2e2e2;
-    overflow: auto;
+    background: green;
+}
+
+.bx_image{
+    width: 100%;
 }
 
 .bx_image_img{
     width: 100%;
+}
+
+.body-product{
+    width: 100%;
+    height: calc(100% - 80px);
+    background: #f2f2f2;
+    overflow: auto;
 }
 
 .bx_desc{
@@ -414,17 +425,32 @@ body{
 }
 .li_desc{
     width: 100%;
-    
+    font-size: 13pt;
 }
 .li_desc_title{
+    width: 100%;
     font-weight: bold;
     color: #111;
     padding: 10px;
        
 }
 .li_desc_desc{
+    width: 100%;
     color: #444;
-    margin: 5px 10px;
+    padding: 5px 10px;
+}
+
+.description_card_cores{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+.description_card_cores_circle{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    margin: 0px 2px;
 }
 
 @media(min-width: 700px){
