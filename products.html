@@ -201,6 +201,7 @@
                                 description_card_cores_circle.addEventListener("click", function(){
 
                                     const classes = document.getElementsByClassName("description_card_cores_circle");
+
                                     for (let index = 0; index < classes.length; index++) {
                                         const element = classes[index];
 
@@ -225,7 +226,7 @@
 
                         const description_card_price = document.createElement("div");
                         description_card_price.setAttribute("class","description_card_price");
-                        description_card_price.innerHTML = item1.price;
+                        description_card_price.innerHTML = "Preço: " + item1.price;
                         description_card.appendChild(description_card_price);
                     
                     const footer_card = document.createElement("div");
