@@ -84,6 +84,7 @@
         }).map(function(item1, index){
 
             let img = item1.url;
+            let arrayItens = [];
 
             const card = document.createElement("div");
             card.setAttribute("class","card");
@@ -189,6 +190,8 @@
                         if (item1.cores) {
 
                             item1.cores.map(function(item, index){
+
+                                
                                 
                                 const description_card_cores_circle = document.createElement("div");
                                 description_card_cores_circle.setAttribute("class","description_card_cores_circle");
@@ -200,14 +203,15 @@
 
                                 description_card_cores_circle.addEventListener("click", function(){
 
-                                    const classes = document.getElementsByClassName("description_card_cores_circle");
+                                   
 
-                                    for (let index = 0; index < classes.length; index++) {
-                                        const element = classes[index];
 
-                                        element.style.border = "none";
-                                        
-                                    }
+                                   for (let indexx = 0; indexx < arrayItens.length; indexx++) {
+                                       const element = arrayItens[indexx];
+
+                                       element.style.border = "none";
+                                       
+                                   }
 
                                     this.style.border = "3px solid #fff";
                                    
@@ -218,9 +222,15 @@
                                     
                                 });
 
+                                arrayItens.push(description_card_cores_circle);
+
+                                console.log(arrayItens);
+
                                 description_card_cores.appendChild(description_card_cores_circle);
 
                             });  
+
+                            
                             
                         }
 
@@ -251,6 +261,8 @@
 
 
         });
+
+        
 
 
         
