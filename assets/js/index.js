@@ -80,9 +80,9 @@ function menu(conteiner){
         $(".menuItem").click(function(){
 
             const slug  = this.dataset.slug;
-            const uri = "/C:/Users/evert/Desktop/projetos/git_gitHub/bordadossofia/index.html";
+            // const uri = "/C:/Users/evert/Desktop/projetos/git_gitHub/bordadossofia/index.html";
             // const uri = "https://evertoncam7.github.io/catalogobordadossofia/";
-            // const uri = "/catalogobordadossofia/";
+            const uri = "/catalogobordadossofia/";
 
             if (slug == "home") {
                 window.location.href = "index.html";
