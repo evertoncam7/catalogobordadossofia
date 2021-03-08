@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/stylesApp.css">
+    <link rel="stylesheet" href="assets/css/stylesCart.css">
+    <link rel="stylesheet" href="assets/icons2/styles.css">
+
+    <style>
+        .icon-clipboard-1{
+            position: relative;
+            top: 2px;
+            right: 5px;
+        }
+
+        .icon-whatsapp-1{
+            position: relative;
+            top: 2px;
+            left: 5px;
+            font-size: 1.4em;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <div class="conteiner_cart">
+
+        <div class="header_cart">
+            <div class="p10">
+                <span id="id-icon-arrow-left" class="icon-arrow-left"></span>
+            </div>
+            <div class="p80">
+                Meu carrinho
+            </div>
+            <div class="p10">
+                <span class="icon-trashcan"></span>
+            </div>
+        </div>
+        
+        <div id="id_bx_list_cart" class="bx_list_cart">
+
+        </div>
+
+        <div class="bottom_cart">
+            <div id="id_cart_item" class="cart_item">
+
+            </div>
+            <div id="id_cart_total" class="cart_total">
+
+            </div>
+            <div class="btn_cart_pedido">
+                FAZER PEDIDO <span class="icon-whatsapp-1"></span>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/index.js"></script>
+<script src="assets/js/session.js"></script>
+<script>
+
+    const conteiner_cart = document.getElementById("id_bx_list_cart");
+
+    let dados = null;
+    if (sessionStorage.cart) {
+        dados = JSON.parse(sessionStorage.cart);   
+
+        dados.produtos.map(function(value, indice){
+        console.log(value.id);
+        cards(value.id, value.img, value.product, value.preco, value.qt);
+        });
+
+        const item = document.getElementById("id_cart_item");
+        item.innerHTML = `${dados.quantidade} Itens`;
+
+        const total = document.getElementById("id_cart_total");
+        total.innerHTML = `TOTAL: ${currencyBrl(dados.total)}`; 
+
+        console.log(dados);
+        console.log("Dados =================");
+    }
+
+    
+
+
+
+    function cards(id, im, ti, pr, qt){
+
+
+        const c = document.createElement("div");
+        c.setAttribute("class","c");
+        c.setAttribute("id", id);
+        conteiner_cart.appendChild(c);
+
+            const linha1 = document.createElement("div");
+            linha1.setAttribute("class","linha1");
+            c.appendChild(linha1);
+
+                const bxImg = document.createElement("div");
+                bxImg.setAttribute("class","bxImg");
+                linha1.appendChild(bxImg);
+
+                    const img = document.createElement("img");
+                    img.setAttribute("class","img");
+                    img.setAttribute("src", im);
+                    bxImg.appendChild(img);
+                
+                const title = document.createElement("div");
+                title.setAttribute("class","title");
+                title.innerHTML = ti;
+                linha1.appendChild(title);
+
+            const linha2 = document.createElement("div");
+            linha2.setAttribute("class","linha2");
+            linha2.innerHTML = `QUANTIDADE: <input class='input-qt' type='number' value='${qt}'/>`;
+            c.appendChild(linha2);
+
+            const linha3 = document.createElement("div");
+            linha3.setAttribute("class","linha3");
+            linha3.innerHTML = `TOTAL: ${currencyBrl(pr)}`;
+            c.appendChild(linha3);
+
+
+    }
+
+    $("#id-icon-arrow-left").on("click", function(){
+        window.history.back();
+    });
+
+
+
+    
+
+    console.log(dados);
+    console.log("dados")
+
+
+</script>
+</html>

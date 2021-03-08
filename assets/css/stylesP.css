@@ -1,0 +1,226 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.container_p{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background:#f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cont{
+   
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+}
+
+.contCard{
+    width: 100%;
+    height: calc(100% - 80px);
+    padding: 10px 10px 0px 10px;
+    overflow: auto;
+}
+
+.card{
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+}
+.bxImg{
+    width: 100%;
+    min-height: 190px;
+}
+
+.img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.bxtitle{
+    width: 100%;
+}
+
+.bxCores{
+    width: 100%;
+    padding: 10px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.bollCollor{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background: chocolate;
+    margin-right: 5px;
+}
+
+.bollActive{
+    width: 25px;
+    height: 25px;
+    border-radius: 12.5px;
+}
+
+.btns{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.btn1{
+    width: 95%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    border:1px solid cornflowerblue;
+    color: cornflowerblue;
+    background: #fff;
+    margin-bottom: 5px;
+}
+
+.btn2{
+    width: 95%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: cornflowerblue;
+    border:1px solid cornflowerblue;
+    color: #fff;
+}
+
+.bxt{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.bx-add-products{
+    position: absolute;
+    bottom: -70%;
+    width: 100%;
+    height: 70%;
+    background: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 20px 20px 0px 0px;
+    overflow: hidden;
+}
+
+.contAddHeader{
+    width: 100%;
+    height: 5%;
+}
+
+.contAdd{
+    width: 100%;
+    height:85%;
+}
+
+.listAdd{
+    padding: 5px 10px; 
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.listPedido{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; 
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #00e31a;
+}
+
+.inpn{
+    width: 40px;
+    margin-left: 15px;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 2px;
+}
+
+.contAddBxContImg{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.icon-whatsapp-1{
+    position: relative;
+    top: 3px;
+    font-size: 1.4em;
+    color: #00e31a;
+    margin-left: 5px;
+}
+
+.contAddProductImg{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background: chocolate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.contAddProductImgImg{
+    width: 150%;
+
+}
+
+.bxContBtns{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.btnCont{
+    width: 45%;
+    height: 90%;
+    background: hotpink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    font-weight: bold;
+    color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.btnAdd{
+    background: #00e31a;
+}
+
+.btnCancel{
+    background: #dd0927;
+}

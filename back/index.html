@@ -6,16 +6,7 @@
     <title>BORDADOS SOFIA</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="stylesheet" href="assets/css/stylesApp.css">
-    <link rel="stylesheet" href="assets/icons2/styles.css">
-
-    <style>
-        .icon-clipboard-1{
-            position: relative;
-            top: 2px;
-            right: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/icons/styles.css">
 </head>
 <body>
 
@@ -29,9 +20,8 @@
                 <div class="h6060">
                     <span>BORDADOS SOFIA</span>
                 </div>
-                <div id="id-cart" class="h6020">
-                    <span class="icon-clipboard-1"></span>
-                    <span id="count-p">0</span>
+                <div class="h6020">
+                    <span class="icon-basket">0</span>
                 </div>
                 
             </div>
@@ -43,7 +33,7 @@
                     <span>Catalogo de produtos</span>
                 </div>
                 <div class="h4020">
-                    <span id="menu_home" class="icon-bars"></span>
+                    <span class="icon-bars"></span>
                 </div>
             </div>
         </div>
@@ -83,30 +73,8 @@
     <script>
         $(function(){
 
-           const con = document.getElementById("id_container");
+            menuDraw("id_container");
 
-            const menu_home = document.getElementById("menu_home");
-            menu_home.addEventListener("click", function(){
-
-                menu(con);
-
-                const bxmenu_home = document.getElementById("id-bxmenu");
-                bxmenu_home.addEventListener("click", function(e){
-                    
-                    if (e.target.id == "id-bxmenu") {
-
-                        $("#id-menu").animate({"left":"-70%"}, function(){
-                            $("#id-bxmenu").fadeOut(500);
-                            $("#id-bxmenu").remove();
-                        });
-                        
-                    }
-
-                });
-
-            });
-
-            
 
             const itemCarrosel = [
                 {id:1, title:"", image:"assets/imagens/carrosel/img1.jpg"},

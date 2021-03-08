@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/icons/styles.css">
+    <title>Document</title>
+    <style>
+
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        .container_d{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #f9f9f9;
+        }
+
+        .header{
+            width: 100%;
+        }
+
+        .header img{
+            width: 100%;
+        }
+
+        .cnt_description{
+            width: 100%;
+            padding: 10px;
+            overflow: auto;
+        }
+
+        .bollCollor{
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            background: chocolate;
+            margin-right: 5px;
+        }
+
+        .cores{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 10px 0px;
+        }
+
+        .bollActive{
+            width: 25px;
+            height: 25px;
+            border-radius: 12.5px;
+        }
+
+        .nav{
+            width: 100%;
+            padding: 10px;
+            background: #e64072;
+            color: #fff;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container_d">
+        <nav class="nav">
+            <span id="btn-back" class="icon-arrow-left nav"></span>
+        </nav>
+
+        <div class="header">
+            <img id="id-img" src="" alt="">
+        </div>
+
+        <div id="id_cnt_description" class="cnt_description">
+
+        </div>
+
+
+
+
+
+    </div>
+    
+</body>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/banco.js"></script>
+<script>
+
+    const hashs = window.location.hash;
+    const idimg = document.getElementById("id-img");
+    const ar = hashs.split("#");
+    let categoria = "";
+    let product = "";
+
+    function search(){
+
+
+        categoria = json.filter(function(value){
+
+            return value.title == ar[1];
+
+        });
+
+        product = categoria[0].products.filter(function(value){
+
+            return value.id == ar[2];
+
+        });
+    
+        const i = product[0].url;
+        idimg.src = i;
+
+    }
+
+    search();
+
+    function description(){
+
+        const bxdecription = document.getElementById("id_cnt_description");
+            const title = document.createElement("div");
+            title.setAttribute("class","title");
+            title.innerHTML = product[0].title;
+            bxdecription.appendChild(title);
+
+            const valor = document.createElement("div");
+            valor.setAttribute("class","valor");
+            valor.innerHTML = currencyBrl(product[0].preco);
+            bxdecription.appendChild(valor);
+
+            const cores = document.createElement("div");
+            cores.setAttribute("class","cores");
+            bxdecription.appendChild(cores);
+
+                product[0].cores.map(function(values, indice){
+
+                    const boll = document.createElement("div");
+                    if (indice == 0) {
+                        boll.setAttribute("class","bollCollor bollActive");
+                    }else{
+                        boll.setAttribute("class","bollCollor");
+                    }
+                    boll.style.background = values.cor;
+
+                    boll.addEventListener("click", function(){
+
+                        $(this).parent().children(".bollCollor").removeClass("bollActive");
+                        $(this).addClass("bollActive");
+
+                        const i = $("#id-img");
+                        const u = values.url;
+                        i.attr("src", u);
+                    });
+
+                    cores.appendChild(boll);
+
+                });
+
+            const descriptions = document.createElement("div");
+            descriptions.setAttribute("class","descriptions");
+            bxdecription.appendChild(descriptions);
+
+                product[0].desc.map(function(values, indice){
+
+                    const p = document.createElement(values.tag);
+                    p.setAttribute("class", values.class);
+                    p.innerHTML = values.text;
+                    descriptions.appendChild(p);
+
+                });
+
+
+    }
+
+    description();
+
+    const btnBack = document.getElementById("btn-back");
+    btnBack.addEventListener("click", function(){
+        window.history.back();
+    });
+
+
+    function currencyBrl(valor){
+
+        if (!valor) {
+            valor = 0;
+        }
+
+
+        const options = {style:"currency", currency:"BRL"};
+        return valor.toLocaleString("pt-br", options);
+
+    }
+
+
+
+
+
+
+
+    // idimg.attr("src", i);
+    // console.log(id);
+</script>
+</html>
