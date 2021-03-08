@@ -1,4 +1,6 @@
 
+window.personalbar.visible = !window.personalbar.visible;
+
 console.log(window.location.pathname);
 
 
