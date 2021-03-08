@@ -14,7 +14,7 @@ function count_products(){
     
 }
 
-count_products();
+
 
 
 function menu(conteiner){
