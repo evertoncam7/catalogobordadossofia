@@ -12,7 +12,7 @@ function count_products(){
     
 }
 
-
+count_products();
 
 
 function menu(conteiner){
@@ -75,7 +75,8 @@ function menu(conteiner){
         $(".menuItem").click(function(){
 
             const slug  = this.dataset.slug;
-            const uri = "/C:/Users/evert/Desktop/projetos/git_gitHub/bordadossofia/index.html";
+            // const uri = "/C:/Users/evert/Desktop/projetos/git_gitHub/bordadossofia/index.html";
+            const uri = "https://evertoncam7.github.io/catalogobordadossofia/index.html";
 
             if (slug == "home") {
                 window.location.href = "index.html";
@@ -83,8 +84,11 @@ function menu(conteiner){
             }
 
             if (window.location.pathname == uri) {
+
                 window.location.href = "p.html#"+slug;
+
             }else if(window.location.pathname != uri){
+
                 window.location.href = "p.html#"+slug;
                 window.location.reload();
             }
