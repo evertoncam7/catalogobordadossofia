@@ -71,17 +71,22 @@ function menu(conteiner){
             $("#id-menu").animate({"left":"0px"}, 500);
         });
 
+        console.log(window.location.pathname);
+        console.log("window =================");
+
 
         $(".menuItem").click(function(){
 
             const slug  = this.dataset.slug;
             // const uri = "/C:/Users/evert/Desktop/projetos/git_gitHub/bordadossofia/index.html";
-            const uri = "https://evertoncam7.github.io/catalogobordadossofia/index.html";
+            const uri = "https://evertoncam7.github.io/catalogobordadossofia/";
 
             if (slug == "home") {
                 window.location.href = "index.html";
                 return;
             }
+
+            
 
             if (window.location.pathname == uri) {
 
