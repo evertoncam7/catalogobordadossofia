@@ -14,7 +14,7 @@
 .bx_list_cart{
     width: 100%;
     height: calc(100% - 155px);
-    background: #f2f2f2;
+    background: #f1f2f4;
     padding: 10px 10px 0px 10px;
     overflow: auto;
 }
