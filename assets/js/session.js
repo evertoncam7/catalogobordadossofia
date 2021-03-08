@@ -90,7 +90,7 @@ function setCart(item){
     }else{
 
         cart.produtos.push(item);
-        cart.quantidade = 1;
+        cart.quantidade = item.qt;
         cart.total = item.preco
         sessionStorage.cart = JSON.stringify(cart);
 
