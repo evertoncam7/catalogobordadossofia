@@ -15,7 +15,8 @@ function count_products(){
 }
 
 
-
+console.log($("[data-page]")[0].dataset.page);
+console.log("Page =================");
 
 function menu(conteiner){
 
@@ -69,20 +70,22 @@ function menu(conteiner){
         const cont = document.getElementById("id-cont");
 
 
-        $("#id-bxmenu").fadeIn(500, function(){
-            $("#id-menu").animate({"left":"0px"}, 500);
+        $("#id-bxmenu").fadeIn(200, function(){
+            $("#id-menu").animate({"left":"0px"}, 200);
         });
 
-        console.log(window.location.pathname);
-        console.log("window =================");
+        
+
+
 
 
         $(".menuItem").click(function(){
 
             const slug  = this.dataset.slug;
-            // const uri = "/C:/Users/evert/Desktop/projetos/git_gitHub/bordadossofia/index.html";
+            const uri = "/C:/Users/evert/Desktop/projetos/git_gitHub/bordadossofia/index.html";
+            const uri2 = "/C:/Users/evert/Desktop/projetos/git_gitHub/bordadossofia/";
             // const uri = "https://evertoncam7.github.io/catalogobordadossofia/";
-            const uri = "/catalogobordadossofia/";
+            // const uri = "/catalogobordadossofia/";
 
             if (slug == "home") {
                 window.location.href = "index.html";
@@ -90,16 +93,7 @@ function menu(conteiner){
             }
 
             
-
-            if (window.location.pathname == uri) {
-
                 window.location.href = "p.html#"+slug;
-
-            }else if(window.location.pathname != uri){
-
-                window.location.href = "p.html#"+slug;
-                window.location.reload();
-            }
 
         });
 
@@ -232,9 +226,6 @@ function bxAddProducts(id, imagem, title, preco){
                 console.log("sdwwwwflm");
 
                 count_products();
-
-                
-                
 
             });
             bxContBtns.appendChild(btnCont1);

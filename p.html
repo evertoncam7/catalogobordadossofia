@@ -21,7 +21,7 @@
     </style>
 
 </head>
-<body>
+<body data-page="products">
 
     <div id="id_container_p" class="container_p">
 
@@ -88,7 +88,7 @@
             
             if (e.target.id == "id-bxmenu") {
 
-                $("#id-menu").animate({"left":"-70%"}, function(){
+                $("#id-menu").animate({"left":"-70%"}, 200, function(){
                     $("#id-bxmenu").fadeOut(500);
                     $("#id-bxmenu").remove();
                 });
@@ -102,121 +102,141 @@
     });
 
 
-    // url 
-
-    const url = window.location.hash;
-    const s = url.split("#");
-
     
-    let product = json.filter(function(values){
-        return values.title == s[1];
-    });
 
-    // console.log(product);
+    function listarProdutos(){
 
-    let w = "";
+        // url 
 
-    if (product.length) {
+        const url = window.location.hash;
+        const s = url.split("#");
 
-        product[0].products.map(function(values, indice){
-
-            const card = document.createElement("div");
-            card.setAttribute("class","card");
-                const bxImg = document.createElement("div");
-                bxImg.setAttribute("class","bxImg");
-                bxImg.setAttribute("class","bxImg");
-                card.appendChild(bxImg);
-
-                    const img = document.createElement("img");
-                    img.setAttribute("class","img");
-                    img.setAttribute("src", values.url);
-                    img.setAttribute("id", "img"+indice);
-                  
-                    bxImg.appendChild(img);
-
-                const bxtitle = document.createElement("div");
-                bxtitle.setAttribute("class","bxtitle");
-                bxtitle.innerHTML = values.title;
-                card.appendChild(bxtitle);
-
-                const bxpreco = document.createElement("div");
-                bxpreco.setAttribute("class","bxpreco");
-                bxpreco.innerHTML = currencyBrl(values.preco);
-                card.appendChild(bxpreco);
-
-                const bxCores = document.createElement("div");
-                bxCores.setAttribute("class","bxCores");
-
-                   
-                    values.cores.map(function(val, ind){
-
-                        const bollCollor = document.createElement("div");
-                        if (ind == 0) {
-                            bollCollor.setAttribute("class","bollCollor bollActive");
-                        }else{
-                            bollCollor.setAttribute("class","bollCollor");
-                        }
-
-                        bollCollor.style.background = val.cor;
-                        bollCollor.setAttribute("id", val.id)
-                        bollCollor.addEventListener("click", function(){
-
-                            $(this).parent().children(".bollCollor").removeClass("bollActive");
-                            $(this).addClass("bollActive");
-
-                            const i = $(this).parent().parent().children(".bxImg").children(".img");
-                            const u = val.url;
-            
-                            i.attr("src", u);
-
-                        });
-
-                        bxCores.appendChild(bollCollor);
-                        
-                    });
-
-                card.appendChild(bxCores);
-
-                const btns = document.createElement("div");
-                btns.setAttribute("class","btns");
-                card.appendChild(btns);
-
-                    const btn1 = document.createElement("div");
-                    btn1.setAttribute("class","btn1");
-                    btn1.innerHTML = "ADICIONAR À LISTA";
-                    btn1.addEventListener("click", function(){
-
-                        const imagem = $(this).parent().parent().children(".bxImg").children(".img").attr("src");
-                        const id = $(this).parent().parent().children(".bxCores").children(".bollActive").attr("id");
-                        
-                        bxAddProducts(id, imagem, values.title, values.preco);
-
-                        $(".bxt").fadeIn(function(){
-                            $(".bx-add-products").animate({bottom:"0px"}, 200);
-                        });
-
-                       
-                    });
-                    btns.appendChild(btn1);
-
-                    const btn2 = document.createElement("div");
-                    btn2.setAttribute("class","btn2");
-                    btn2.innerHTML = "DETALHES DO PRODUTO";
-                    btn2.addEventListener("click", function(){
-
-                        window.location.href = "d.html#"+s[1]+"#"+values.id;
-
-                    });
-                   
-                   
-                    btns.appendChild(btn2);
-                  
-
-            container_card.appendChild(card);   
-
+        
+        let product = json.filter(function(values){
+            return values.title == s[1];
         });
-    }
+
+        // console.log(product);
+
+        let w = "";
+
+        container_card.innerHTML = " ";
+
+        if (product.length) {
+
+            product[0].products.map(function(values, indice){
+
+                const card = document.createElement("div");
+                card.setAttribute("class","card");
+                    const bxImg = document.createElement("div");
+                    bxImg.setAttribute("class","bxImg");
+                    bxImg.setAttribute("class","bxImg");
+                    card.appendChild(bxImg);
+
+                        const img = document.createElement("img");
+                        img.setAttribute("class","img");
+                        img.setAttribute("src", values.url);
+                        img.setAttribute("id", "img"+indice);
+                    
+                        bxImg.appendChild(img);
+
+                    const bxtitle = document.createElement("div");
+                    bxtitle.setAttribute("class","bxtitle");
+                    bxtitle.innerHTML = values.title;
+                    card.appendChild(bxtitle);
+
+                    const bxpreco = document.createElement("div");
+                    bxpreco.setAttribute("class","bxpreco");
+                    bxpreco.innerHTML = currencyBrl(values.preco);
+                    card.appendChild(bxpreco);
+
+                    const bxCores = document.createElement("div");
+                    bxCores.setAttribute("class","bxCores");
+
+                    
+                        values.cores.map(function(val, ind){
+
+                            const bollCollor = document.createElement("div");
+                            if (ind == 0) {
+                                bollCollor.setAttribute("class","bollCollor bollActive");
+                            }else{
+                                bollCollor.setAttribute("class","bollCollor");
+                            }
+
+                            bollCollor.style.background = val.cor;
+                            bollCollor.setAttribute("id", val.id)
+                            bollCollor.addEventListener("click", function(){
+
+                                $(this).parent().children(".bollCollor").removeClass("bollActive");
+                                $(this).addClass("bollActive");
+
+                                const i = $(this).parent().parent().children(".bxImg").children(".img");
+                                const u = val.url;
+                
+                                i.attr("src", u);
+
+                            });
+
+                            bxCores.appendChild(bollCollor);
+                            
+                        });
+
+                    card.appendChild(bxCores);
+
+                    const btns = document.createElement("div");
+                    btns.setAttribute("class","btns");
+                    card.appendChild(btns);
+
+                        const btn1 = document.createElement("div");
+                        btn1.setAttribute("class","btn1");
+                        btn1.innerHTML = "ADICIONAR À LISTA";
+                        btn1.addEventListener("click", function(){
+
+                            const imagem = $(this).parent().parent().children(".bxImg").children(".img").attr("src");
+                            const id = $(this).parent().parent().children(".bxCores").children(".bollActive").attr("id");
+                            
+                            bxAddProducts(id, imagem, values.title, values.preco);
+
+                            $(".bxt").fadeIn(function(){
+                                $(".bx-add-products").animate({bottom:"0px"}, 200);
+                            });
+
+                        
+                        });
+                        btns.appendChild(btn1);
+
+                        const btn2 = document.createElement("div");
+                        btn2.setAttribute("class","btn2");
+                        btn2.innerHTML = "DETALHES DO PRODUTO";
+                        btn2.addEventListener("click", function(){
+
+                            window.location.href = "d.html#"+s[1]+"#"+values.id;
+
+                        });
+                    
+                    
+                        btns.appendChild(btn2);
+                    
+
+                container_card.appendChild(card);   
+
+            });
+        }else{
+            console.log("Não obteve resultados.");
+        }
     
+    }   
+
+    listarProdutos();
+
+    $("body").on("click", ".menuItem", function(){
+        listarProdutos();
+
+        $("#id-menu").animate({"left":"-70%"}, 200, function(){
+            $("#id-bxmenu").fadeOut(100);
+            $("#id-bxmenu").remove();
+        });
+    });
 
     function currencyBrl(valor){
 

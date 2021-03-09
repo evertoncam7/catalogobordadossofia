@@ -46,7 +46,7 @@ header{
     width: 100%;
     height: 60%;
     background: #fff;
-    color: #ea4f88;
+    color: #8a7090;
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -55,7 +55,7 @@ header{
 .headerp2{
     width: 100%;
     height: 40%;
-    background: #ea4f88;
+    background: #8a7090;
     
 }
 
