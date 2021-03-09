@@ -190,6 +190,16 @@ function bxAddProducts(id, imagem, title, preco){
             
 
             const inp = document.getElementById("id-inpn");
+
+            bx.addEventListener("click", function(e){
+                console.log(e.target.id);
+                if (e.target.id != "id-inpn") {
+                    bx.style.height = "70%";
+                }else{
+                    bx.style.height = "120%";
+                }
+                
+            });
             inp.addEventListener("change", function(e){
                 const quantidade = e.target.value;
                 const valor = quantidade * preco;
