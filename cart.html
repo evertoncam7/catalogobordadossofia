@@ -37,7 +37,7 @@
                 <span id="id-icon-arrow-left" class="icon-arrow-left"></span>
             </div>
             <div class="p80">
-                Meu carrinho
+                MEU CARRINHO
             </div>
             <div class="p10">
                 <span class="icon-trashcan"></span>
@@ -53,7 +53,7 @@
 
             </div>
             <div id="id_cart_total" class="cart_total">
-
+                
             </div>
             <div class="btn_cart_pedido">
                 <div class="btn-pedido">
@@ -71,6 +71,10 @@
 <script>
 
     const conteiner_cart = document.getElementById("id_bx_list_cart");
+
+    const bxtotal = document.getElementById("id_cart_total").innerHTML = `TOTAL: ${currencyBrl(0)}`;
+    const itemm = document.getElementById("id_cart_item");
+    itemm.innerHTML = `0 Itens`;
 
     let dados = null;
     if (sessionStorage.cart) {
