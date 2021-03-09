@@ -233,7 +233,7 @@ function bxAddProducts(id, imagem, title, preco){
                 console.log(p);
 
                 setCart({id:id, img:imagem, product:title, qt:q, preco:p})
-                console.log("sdwwwwflm");
+                
 
                 count_products();
 
@@ -250,6 +250,8 @@ function bxAddProducts(id, imagem, title, preco){
 
 }
 
+
+
 $("body").on("click",".bxt" ,function(e){
 
     const btn = $(this);
@@ -262,7 +264,23 @@ $("body").on("click",".bxt" ,function(e){
         });
     }
 
-});
+}); 
+// 
+
+$("body").on("click","#id-btnCont1" ,function(e){
+
+    const btn = $(this);
+    console.log("======================== fechar ===============================");
+
+    if (e.target.id == "id-btnCont1") {
+        $(".bx-add-products").animate({bottom:"-70%"}, 200, function(){
+            $(".bxt").fadeOut(function(){
+                $(".bxt").remove();
+            });
+        });
+    }
+
+}); 
 
 
 
