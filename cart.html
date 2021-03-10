@@ -30,7 +30,7 @@
 </head>
 <body data-page="cart">
 
-    <div class="conteiner_cart">
+    <div id="cc" class="conteiner_cart">
 
         <div class="header_cart">
             <div class="p10">
@@ -40,10 +40,14 @@
                 MEU CARRINHO
             </div>
             <div class="p10">
-                <span class="icon-trashcan"></span>
+                <span id="id-cart-remove" class="icon-trashcan"></span>
             </div>
         </div>
-        
+        <div id="rc" class="removeCard">
+            <div id="idNavCartRemove" class="navCardRemove">
+               
+            </div>
+        </div>
         <div id="id_bx_list_cart" class="bx_list_cart">
 
         </div>
@@ -71,6 +75,7 @@
 <script>
 
     const conteiner_cart = document.getElementById("id_bx_list_cart");
+    const rc = document.getElementById("rc");
 
     const bxtotal = document.getElementById("id_cart_total").innerHTML = `TOTAL: ${currencyBrl(0)}`;
     const itemm = document.getElementById("id_cart_item");
@@ -143,8 +148,39 @@
     });
 
     console.log(window);
+    let cr = true;
+    const brnCartRemove = document.getElementById("id-cart-remove");
+    brnCartRemove.addEventListener("click", function(){
 
+        const navCardRemovebx = document.getElementById("idNavCartRemove");
+        navCardRemovebx.innerHTML = "";
+        const navCardRemove = document.createElement("div");
+        navCardRemove.setAttribute("class","checkbox");
+        navCardRemove.innerHTML = `MARCAR TODOS <input id='id-checkbox' type='checkbox' />`;
+        navCardRemovebx.appendChild(navCardRemove);
 
+       
+      if (cr) {
+        $("#idNavCartRemove").fadeIn(200, function(){
+            $(this).animate({top:"0px"}, 200);
+        });
+        const h = $("#id_bx_list_cart").height();
+        const hh = h - 40;
+        $("#id_bx_list_cart").animate({paddingTop:"50px"}, 200);
+        cr = false;
+      }else{
+        $("#idNavCartRemove").fadeIn(200, function(){
+            $(this).animate({top:"-40px"}, 200);
+        })
+        $("#id_bx_list_cart").animate({paddingTop:"10px"}, 200);
+        cr = true;
+      }
+
+        
+
+        
+        
+    });
 
     
 

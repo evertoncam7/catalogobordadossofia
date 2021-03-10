@@ -132,12 +132,20 @@ function bxAddProducts(id, imagem, title, preco){
     const bxt = document.createElement("div");
     bxt.setAttribute("class", "bxt");
     bxt.setAttribute("id", "id-bxt");
+    
+
 
     cont.appendChild(bxt);
 
     const bx = document.createElement("div");
     bx.setAttribute("class", "bx-add-products");
     bx.setAttribute("id", "id-bx-add-products");
+    bx.addEventListener("click", function(e){
+
+        const height = Math.floor($(this).height());
+        bx.style.height = height + ".5px";
+
+    });
     bxt.appendChild(bx);
 
         const contAddHeader = document.createElement("div");
@@ -191,15 +199,8 @@ function bxAddProducts(id, imagem, title, preco){
 
             const inp = document.getElementById("id-inpn");
 
-            bx.addEventListener("click", function(e){
-                console.log(e.target.id);
-                if (e.target.id != "id-inpn") {
-                    bx.style.height = "70%";
-                }else{
-                    bx.style.height = "120%";
-                }
-                
-            });
+            
+
             inp.addEventListener("change", function(e){
                 const quantidade = e.target.value;
                 const valor = quantidade * preco;
@@ -296,6 +297,7 @@ function currencyBrl(valor){
     return valor.toLocaleString("pt-br", options);
 
 }
+
 
 
 
