@@ -77,6 +77,8 @@
     const conteiner_cart = document.getElementById("id_bx_list_cart");
     const rc = document.getElementById("rc");
 
+    const arrayCheckbox = [];
+
     const bxtotal = document.getElementById("id_cart_total").innerHTML = `TOTAL: ${currencyBrl(0)}`;
     const itemm = document.getElementById("id_cart_item");
     itemm.innerHTML = `0 Itens`;
@@ -116,19 +118,30 @@
             linha1.setAttribute("class","linha1");
             c.appendChild(linha1);
 
-                const bxImg = document.createElement("div");
-                bxImg.setAttribute("class","bxImg");
-                linha1.appendChild(bxImg);
+                const bxI = document.createElement("div");
+                bxI.setAttribute("class","bxI");
+                linha1.appendChild(bxI);
 
-                    const img = document.createElement("img");
-                    img.setAttribute("class","img");
-                    img.setAttribute("src", im);
-                    bxImg.appendChild(img);
+                    const bxImg = document.createElement("div");
+                    bxImg.setAttribute("class","bxImg");
+                    bxI.appendChild(bxImg);
+
+                        const img = document.createElement("img");
+                        img.setAttribute("class","img");
+                        img.setAttribute("src", im);
+                        bxImg.appendChild(img);
+                    
+                    const title = document.createElement("div");
+                    title.setAttribute("class","title");
+                    title.innerHTML = ti;
+                    bxI.appendChild(title);
+
+                const bxcheckbox = document.createElement("div");
+                bxcheckbox.setAttribute("class","bxcheckbox");
+                bxcheckbox.setAttribute("id","checkbox-"+id);
+                arrayCheckbox.push(bxcheckbox);
+                linha1.appendChild(bxcheckbox);
                 
-                const title = document.createElement("div");
-                title.setAttribute("class","title");
-                title.innerHTML = ti;
-                linha1.appendChild(title);
 
             const linha2 = document.createElement("div");
             linha2.setAttribute("class","linha2");
@@ -157,6 +170,32 @@
         const navCardRemove = document.createElement("div");
         navCardRemove.setAttribute("class","checkbox");
         navCardRemove.innerHTML = `MARCAR TODOS <input id='id-checkbox' type='checkbox' />`;
+        navCardRemove.addEventListener("click", function(e){
+            console.log(e.target.checked);
+
+            if (e.target.checked) {
+
+                console.log("swfwf");
+                
+                arrayCheckbox.map(function(value, indice){
+
+                    const el = document.getElementById("c-"+value.id);
+                    el.checked = true;
+
+                });
+
+            }else{
+
+                arrayCheckbox.map(function(value, indice){
+
+                    const el = document.getElementById("c-"+value.id);
+                    el.checked = false;
+
+                });
+
+            }
+
+        });
         navCardRemovebx.appendChild(navCardRemove);
 
        
@@ -167,12 +206,40 @@
         const h = $("#id_bx_list_cart").height();
         const hh = h - 40;
         $("#id_bx_list_cart").animate({paddingTop:"50px"}, 200);
+
+        
+        console.log(arrayCheckbox[0]);
+        arrayCheckbox.map(function(value, indice){
+
+            const el = document.getElementById(value.id);
+            el.innerHTML = "";
+
+            const ch = document.createElement("input");
+            ch.setAttribute("type","checkbox");
+            ch.setAttribute("id","c-"+value.id);
+            ch.style.width = "20px";
+            ch.style.height = "20px";
+            el.appendChild(ch);
+            console.log(el);
+        });
+        
+
+
         cr = false;
       }else{
         $("#idNavCartRemove").fadeIn(200, function(){
             $(this).animate({top:"-40px"}, 200);
         })
         $("#id_bx_list_cart").animate({paddingTop:"10px"}, 200);
+
+        arrayCheckbox.map(function(value, indice){
+
+            const el = document.getElementById(value.id);
+            el.innerHTML = "";
+
+        });
+
+        
         cr = true;
       }
 
