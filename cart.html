@@ -182,7 +182,10 @@
                     arrayCheckbox.map(function(value, indice){
 
                         const el = document.getElementById("c-"+value.id);
-                        el.checked = true;
+                        if (el) {
+                            el.checked = true;
+                        }
+                        
 
                     });
 
@@ -211,14 +214,23 @@
             arrayCheckbox.map(function(value, indice){
 
                 const ell = document.getElementById("c-"+value.id);
-                if (ell.checked) {
-                    const idd = $("#c-"+value.id).parent().parent().parent().attr("id");
-                    console.log($("#c-"+value.id).parent().parent().parent().attr("id"));
-                    removeItem.push(idd);
-                    arrayCheckbox.splice(indice, 1);
+
+                if (ell) {
+                    if (ell.checked) {
+
+                        const idd = $("#c-"+value.id).parent().parent().parent().attr("id");
+                        console.log($("#c-"+value.id).parent().parent().parent().attr("id"));
+                        removeItem.push(idd);
+                        console.log(indice);
+                        
+                        
+                    }
                 }
                 
+
+                
             });
+
 
             const sessionCart = JSON.parse(sessionStorage.cart);
 
@@ -228,7 +240,7 @@
 
             console.log(arrayItem);
 
-            function updateDelete(item){
+            function updateDelete(item, index){
 
                 for (let index = 0; index < arrayItem.length; index++) {
                     
@@ -238,7 +250,7 @@
                         
                         sessionCart.quantidade -= arrayItem[index].qt;
                         sessionCart.total -= arrayItem[index].preco;
-
+                        arrayCheckbox[index].remove();
                         arrayItem.splice(index, 1);
                     }
                     
@@ -255,7 +267,7 @@
             }
 
             removeItem.map(function(value, index){
-                updateDelete(value);
+                updateDelete(value, index);
             });
 
 
