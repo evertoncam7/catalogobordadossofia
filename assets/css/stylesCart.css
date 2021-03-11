@@ -118,8 +118,19 @@ input[type=checkbox]{
     align-items: center;
 }
 
+.btn-card-excluir{
+    padding: 5px 20px;
+    background: crimson;
+    color: #fff;
+    border-radius: 5px;
+}
+
 .checkbox{
-    
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.8em;
 }
 
 .linha2{

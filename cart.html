@@ -78,6 +78,7 @@
     const rc = document.getElementById("rc");
 
     const arrayCheckbox = [];
+    const arrayCards = [];
 
     const bxtotal = document.getElementById("id_cart_total").innerHTML = `TOTAL: ${currencyBrl(0)}`;
     const itemm = document.getElementById("id_cart_item");
@@ -151,6 +152,7 @@
             const linha3 = document.createElement("div");
             linha3.setAttribute("class","linha3");
             linha3.innerHTML = `TOTAL: ${currencyBrl(pr)}`;
+            arrayCards.push(c);
             c.appendChild(linha3);
 
 
@@ -169,34 +171,102 @@
         navCardRemovebx.innerHTML = "";
         const navCardRemove = document.createElement("div");
         navCardRemove.setAttribute("class","checkbox");
-        navCardRemove.innerHTML = `MARCAR TODOS <input id='id-checkbox' type='checkbox' />`;
+        navCardRemove.innerHTML = `<div>MARCAR TODOS <input id='id-checkbox' type='checkbox' /></div><div id='id-btn-excluir' class='btn-card-excluir'>EXCLUIR</div>`;
         navCardRemove.addEventListener("click", function(e){
-            console.log(e.target.checked);
+            console.log(e.target.id);
 
-            if (e.target.checked) {
+            if (e.target.id == "id-checkbox") {
 
-                console.log("swfwf");
-                
-                arrayCheckbox.map(function(value, indice){
+                if (e.target.checked) {
 
-                    const el = document.getElementById("c-"+value.id);
-                    el.checked = true;
+                    arrayCheckbox.map(function(value, indice){
 
-                });
+                        const el = document.getElementById("c-"+value.id);
+                        el.checked = true;
 
-            }else{
+                    });
 
-                arrayCheckbox.map(function(value, indice){
+                }else{
 
-                    const el = document.getElementById("c-"+value.id);
-                    el.checked = false;
+                    arrayCheckbox.map(function(value, indice){
 
-                });
+                        const el = document.getElementById("c-"+value.id);
+                        el.checked = false;
+
+                    });
+
+                }
 
             }
 
+         
         });
         navCardRemovebx.appendChild(navCardRemove);
+        const removeItem = [];
+        console.log(sessionStorage.cart);
+        console.log("sessão cart");
+
+        $("#id-btn-excluir").on("click", function(){
+            arrayCheckbox.map(function(value, indice){
+
+                const ell = document.getElementById("c-"+value.id);
+                if (ell.checked) {
+                    const idd = $("#c-"+value.id).parent().parent().parent().attr("id");
+                    console.log($("#c-"+value.id).parent().parent().parent().attr("id"));
+                    removeItem.push(idd);
+                }
+                
+            });
+
+            const sessionCart = JSON.parse(sessionStorage.cart);
+
+         
+            let arrayItem = sessionCart.produtos;
+            let a = [];
+
+            console.log(arrayItem);
+
+            function updateDelete(item){
+
+                for (let index = 0; index < arrayItem.length; index++) {
+                    
+                    if (item == arrayItem[index].id) {
+
+                        $("#"+arrayItem[index].id).remove();
+                        sessionCart.quantidade -= arrayItem[index].qt;
+                        sessionCart.total -= arrayItem[index].preco;
+
+                        arrayItem.splice(index, 1);
+                    }
+                    
+                }
+
+                sessionCart.produtos = arrayItem;
+
+                document.getElementById("id_cart_total").innerHTML = `TOTAL: ${currencyBrl(sessionCart.total)}`;
+                document.getElementById("id_cart_item");
+                itemm.innerHTML = `${sessionCart.quantidade} Itens`;
+
+
+                sessionStorage.cart = JSON.stringify(sessionCart);
+            }
+
+            removeItem.map(function(value, index){
+                updateDelete(value);
+            });
+
+
+          
+            
+            console.log("cart =========== remove")
+            console.log(sessionStorage.cart);
+
+            console.log("Session Cart ========================");
+      
+            console.log("Deletado ========================");
+
+
+        });
 
        
       if (cr) {
