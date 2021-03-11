@@ -207,6 +207,7 @@
         console.log("sessão cart");
 
         $("#id-btn-excluir").on("click", function(){
+
             arrayCheckbox.map(function(value, indice){
 
                 const ell = document.getElementById("c-"+value.id);
@@ -214,6 +215,7 @@
                     const idd = $("#c-"+value.id).parent().parent().parent().attr("id");
                     console.log($("#c-"+value.id).parent().parent().parent().attr("id"));
                     removeItem.push(idd);
+                    arrayCheckbox.splice(indice, 1);
                 }
                 
             });
@@ -233,6 +235,7 @@
                     if (item == arrayItem[index].id) {
 
                         $("#"+arrayItem[index].id).remove();
+                        
                         sessionCart.quantidade -= arrayItem[index].qt;
                         sessionCart.total -= arrayItem[index].preco;
 
@@ -242,7 +245,7 @@
                 }
 
                 sessionCart.produtos = arrayItem;
-
+                
                 document.getElementById("id_cart_total").innerHTML = `TOTAL: ${currencyBrl(sessionCart.total)}`;
                 document.getElementById("id_cart_item");
                 itemm.innerHTML = `${sessionCart.quantidade} Itens`;
