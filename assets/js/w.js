@@ -29,7 +29,7 @@ btn_whatsapp.addEventListener("click", function(){
         // console.log(string);
     });
     
-    window.location.href = `https://api.whatsapp.com/send?phone=5516982011978&text=${string}`;
+    window.location.href = `https://api.whatsapp.com/send?phone=5516982011978&text=${string}%20(Itens:%20${data.quantidade},%20Total do pedido:%20${currencyBrl(data.total)})`;
 
     console.log(string);
 });
