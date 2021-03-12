@@ -25,7 +25,7 @@ btn_whatsapp.addEventListener("click", function(){
 
     const data = JSON.parse(sessionStorage.cart);
     data.produtos.map(function(values, indice){
-        string += values.qt+"%20"+values.product+"%20"+currencyBrl(values.preco)+",%20"
+        string += values.qt+"%20"+values.product+"%20"+currencyBrl(values.preco)+",%20"+values.img+"%20";
         // console.log(string);
     });
     
