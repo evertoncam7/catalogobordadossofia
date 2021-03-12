@@ -83,6 +83,13 @@
     <script>
         $(function(){
 
+            count_products();
+
+            const btnCart = document.getElementById("id-cart");
+            btnCart.addEventListener("click", function(){
+                window.location.href = "cart.html";
+            });
+
            const con = document.getElementById("id_container");
 
             const menu_home = document.getElementById("menu_home");
