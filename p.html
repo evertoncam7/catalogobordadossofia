@@ -25,39 +25,41 @@
 
     <div id="id_container_p" class="container_p">
 
-        <div id="id-cont" class="cont">
-            <div class="header">
-                <div class="h60">
-                    <div class="h6020">
-    
+        
+            
+            <div id="id-cont-1" class="cont">
+                <div class="header">
+                    <div class="h60">
+                        <div class="h6020">
+        
+                        </div>
+                        <div class="h6060">
+                            <span>BORDADOS SOFIA</span>
+                        </div>
+                        <div id="id-cart" class="h6020">
+                            <span class="icon-clipboard-1"></span>
+                            <span id="count-p">0</span>
+                        </div>
+                        
                     </div>
-                    <div class="h6060">
-                        <span>BORDADOS SOFIA</span>
+                    <div class="h40">
+                        <div class="h4020">
+                            <span class="icon-whatsapp"></span>
+                        </div>
+                        <div class="h4060">
+                            <span>Catalogo de produtos</span>
+                        </div>
+                        <div class="h4020">
+                            <span id="menu_home" class="icon-bars"></span>
+                        </div>
                     </div>
-                    <div id="id-cart" class="h6020">
-                        <span class="icon-clipboard-1"></span>
-                        <span id="count-p">0</span>
-                    </div>
-                    
                 </div>
-                <div class="h40">
-                    <div class="h4020">
-                        <span class="icon-whatsapp"></span>
-                    </div>
-                    <div class="h4060">
-                        <span>Catalogo de produtos</span>
-                    </div>
-                    <div class="h4020">
-                        <span id="menu_home" class="icon-bars"></span>
-                    </div>
+        
+                <div id="id-cont-card" class="contCard">
+        
                 </div>
             </div>
-    
-            <div id="id-cont-card" class="contCard">
-    
-            </div>
-        </div>
-
+        
 
     </div>
     
@@ -68,21 +70,19 @@
 <script src="assets/js/session.js"></script>
 <script>
 
-    count_products();
-
-    
-
-    
+    count_products()
 
     const container = document.getElementById("id_container_p");
     
     const container_card = document.getElementById("id-cont-card");
+    const id_cont = document.getElementById("id-cont-1");
  
     const menu_home = document.getElementById("menu_home");
     menu_home.addEventListener("click", function(){
 
         
-        menu(container);
+        menu(id_cont);
+
         const bxmenu_home = document.getElementById("id-bxmenu");
         bxmenu_home.addEventListener("click", function(e){
             
@@ -150,38 +150,50 @@
                     bxpreco.innerHTML = currencyBrl(values.preco);
                     card.appendChild(bxpreco);
 
-                    const bxCores = document.createElement("div");
-                    bxCores.setAttribute("class","bxCores");
+                    const bxcoresmeli = document.createElement("div");
+                    bxcoresmeli.setAttribute("class","bxcoresmeli");
+                    card.appendChild(bxcoresmeli);
 
+                        const bxCores = document.createElement("div");
+                        bxCores.setAttribute("class","bxCores");
+
+                        
+                            values.cores.map(function(val, ind){
+
+                                const bollCollor = document.createElement("div");
+                                if (ind == 0) {
+                                    bollCollor.setAttribute("class","bollCollor bollActive");
+                                }else{
+                                    bollCollor.setAttribute("class","bollCollor");
+                                }
+
+                                bollCollor.style.background = val.cor;
+                                bollCollor.setAttribute("id", val.id)
+                                bollCollor.addEventListener("click", function(){
+
+                                    $(this).parent().children(".bollCollor").removeClass("bollActive");
+                                    $(this).addClass("bollActive");
+
+                                    const i = $(this).parent().parent().parent().children(".bxImg").children(".img");
+                                    const u = val.url;
                     
-                        values.cores.map(function(val, ind){
+                                    i.attr("src", u);
 
-                            const bollCollor = document.createElement("div");
-                            if (ind == 0) {
-                                bollCollor.setAttribute("class","bollCollor bollActive");
-                            }else{
-                                bollCollor.setAttribute("class","bollCollor");
-                            }
+                                });
 
-                            bollCollor.style.background = val.cor;
-                            bollCollor.setAttribute("id", val.id)
-                            bollCollor.addEventListener("click", function(){
-
-                                $(this).parent().children(".bollCollor").removeClass("bollActive");
-                                $(this).addClass("bollActive");
-
-                                const i = $(this).parent().parent().children(".bxImg").children(".img");
-                                const u = val.url;
-                
-                                i.attr("src", u);
-
+                                bxCores.appendChild(bollCollor);
+                                
                             });
 
-                            bxCores.appendChild(bollCollor);
-                            
-                        });
+                        bxcoresmeli.appendChild(bxCores);
 
-                    card.appendChild(bxCores);
+                        const btnmeli = document.createElement("div");
+                        btnmeli.setAttribute("class","btnmeli");
+                        btnmeli.innerHTML = `<img class='img-meli' src='assets/imagens/Logotipo_MercadoLivre.png' />`;
+                        btnmeli.addEventListener("click", function(){
+                            window.location.href = "https://produto.mercadolivre.com.br/MLB-1253388881-cobre-leito-casal-queen-3-pcs-colcha-dupla-face-com-vies-_JM#position=1&type=item&tracking_id=2c45ddb4-7696-4b12-b2ad-296aa789e117";
+                        });
+                        bxcoresmeli.appendChild(btnmeli);
 
                     const btns = document.createElement("div");
                     btns.setAttribute("class","btns");
@@ -193,7 +205,10 @@
                         btn1.addEventListener("click", function(){
 
                             const imagem = $(this).parent().parent().children(".bxImg").children(".img").attr("src");
-                            const id = $(this).parent().parent().children(".bxCores").children(".bollActive").attr("id");
+                            const id = $(this).parent().parent().children(".bxcoresmeli").children(".bxCores").children(".bollActive").attr("id");
+                            
+                            console.log($(this).parent().parent().children(".bxcoresmeli").children(".bxCores").children(".bollActive").attr("id"));
+                            console.log("vvvvvvvvvvvvvvv");
                             
                             bxAddProducts(id, imagem, values.title, values.preco);
 
@@ -243,7 +258,6 @@
         if (!valor) {
             valor = 0;
         }
-
 
         const options = {style:"currency", currency:"BRL"};
         return valor.toLocaleString("pt-br", options);

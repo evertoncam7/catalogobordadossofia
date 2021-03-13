@@ -23,11 +23,12 @@ body{
 }
 
 .cont{
-   
+    position: relative;
     width: 100%;
     height: 100%;
-    transform: scale(1);
+    overflow: hidden;
 }
+
 
 .contCard{
     width: 100%;
@@ -64,8 +65,18 @@ body{
     color: #b80c09;
 }
 
-.bxCores{
+.bxcoresmeli{
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.img-meli{
+    width: 100px;
+}
+
+.bxCores{
     padding: 10px 0px;
     display: flex;
     align-items: center;
@@ -233,4 +244,10 @@ body{
 
 .btnCancel{
     background: #b80c09;
+}
+
+@media(min-width:600px){
+    .cont{
+        width:900px;
+    }
 }

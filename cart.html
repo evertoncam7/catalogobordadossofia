@@ -30,38 +30,41 @@
 </head>
 <body data-page="cart">
 
-    <div id="cc" class="conteiner_cart">
+    <div  class="conteiner_cart">
 
-        <div class="header_cart">
-            <div class="p10">
-                <span id="id-icon-arrow-left" class="icon-arrow-left"></span>
-            </div>
-            <div class="p80">
-                MEU CARRINHO
-            </div>
-            <div class="p10">
-                <span id="id-cart-remove" class="icon-trashcan"></span>
-            </div>
-        </div>
-        <div id="rc" class="removeCard">
-            <div id="idNavCartRemove" class="navCardRemove">
-               
-            </div>
-        </div>
-        <div id="id_bx_list_cart" class="bx_list_cart">
+        <div id="cc" class="cont_first_cart">
 
-        </div>
-
-        <div class="bottom_cart">
-            <div id="id_cart_item" class="cart_item">
-
+            <div class="header_cart">
+                <div class="p10">
+                    <span id="id-icon-arrow-left" class="icon-arrow-left"></span>
+                </div>
+                <div class="p80">
+                    MEU CARRINHO
+                </div>
+                <div class="p10">
+                    <span id="id-cart-remove" class="icon-trashcan"></span>
+                </div>
             </div>
-            <div id="id_cart_total" class="cart_total">
-                
+            <div id="rc" class="removeCard">
+                <div id="idNavCartRemove" class="navCardRemove">
+                   
+                </div>
             </div>
-            <div class="btn_cart_pedido">
-                <div id="btn-w" class="btn-pedido">
-                    FAZER PEDIDO <span class="icon-whatsapp-1"></span>
+            <div id="id_bx_list_cart" class="bx_list_cart">
+    
+            </div>
+    
+            <div class="bottom_cart">
+                <div id="id_cart_item" class="cart_item">
+    
+                </div>
+                <div id="id_cart_total" class="cart_total">
+                    
+                </div>
+                <div class="btn_cart_pedido">
+                    <div id="btn-w" class="btn-pedido">
+                        FAZER PEDIDO <span class="icon-whatsapp-1"></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -220,7 +223,8 @@
                     if (ell.checked) {
 
                         const idd = $("#c-"+value.id).parent().parent().parent().attr("id");
-                        console.log($("#c-"+value.id).parent().parent().parent().attr("id"));
+                        console.log($("#c-"+value.id).parent().parent().parent());
+                        console.log("================= teste ================");
                         removeItem.push(idd);
                         console.log(indice);
                         

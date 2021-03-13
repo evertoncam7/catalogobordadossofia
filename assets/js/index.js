@@ -18,14 +18,16 @@ function count_products(){
 console.log($("[data-page]")[0].dataset.page);
 console.log("Page =================");
 
-function menu(conteiner){
+function menu(conteinerr){
 
     const list = [
-        {id:0, title:"Home"},
-        {id:1, title:"Cobreleito para Casal"},
-        {id:2, title:"Cobreleito para Solteiro"},
-        {id:3, title:"Cortinas"},
-        {id:4, title:"Coberdrom casal"},
+        {id:0, class:"menuItem", title:"Home"},
+        {id:1, class:"menuItem", title:"Cobreleito Casal"},
+        {id:2, class:"menuItem", title:"Cobreleito Solteiro"},
+        {id:3, class:"menuItem", title:"Cortinas"},
+        {id:4, class:"menuItem", title:"Coberdrom casal"},
+        {id:5, class:"menuItem-title", title:"MARKETPLACES"},
+        {id:6, class:"menuItem", title:"MERCADO LIVRE"},
        
     ];
 
@@ -54,7 +56,7 @@ function menu(conteiner){
             list.map(function(value, indice){
 
                 const menuItem = document.createElement("div");
-                menuItem.setAttribute("class", "menuItem");
+                menuItem.setAttribute("class", value.class);
                 menuItem.setAttribute("data-index", "index");
                 menuItem.setAttribute("id", indice);
                 menuItem.setAttribute("data-slug", slug(value.title));
@@ -65,9 +67,9 @@ function menu(conteiner){
 
 
 
-    conteiner.appendChild(bxmenu);
+    conteinerr.appendChild(bxmenu);
 
-        const cont = document.getElementById("id-cont");
+       
 
 
         $("#id-bxmenu").fadeIn(200, function(){
@@ -127,13 +129,11 @@ function bxAddProducts(id, imagem, title, preco){
         preco
     ]);
 
-    const cont = document.getElementById("id-cont");
+    const cont = document.getElementById("id_container_p");
 
     const bxt = document.createElement("div");
     bxt.setAttribute("class", "bxt");
     bxt.setAttribute("id", "id-bxt");
-    
-
 
     cont.appendChild(bxt);
 

@@ -1,5 +1,5 @@
 const json = [
-    {id:1, title:"cobreleito-para-casal", products:[
+    {id:1, title:"cobreleito-casal", products:[
             {
                 id:"p-1", title:"Cobre leito casal", url:"assets/imagens/r/IMG-20200616-WA0005.jpg", cores:[
                     {id:"c-1", url:"assets/imagens/r/IMG-20200616-WA0005.jpg", cor:"green"},
@@ -36,17 +36,91 @@ const json = [
             },
         ]
     },
-    {id:2, title:"cobreleito-para-solteiro", products:[
-        {
-            id:"p-1", title:"Cobre leito soltiro", url:"assets/imagens/solteiro/solteiro1.jpeg", cores:[
-                {id:"cs-1", url:"assets/imagens/solteiro/solteiro1.jpg", cor:""},
-                
-            ], 
-            desc:[
+    {id:2, title:"cobreleito-solteiro", products:[
+            {
+                id:"p-1", title:"Cobre leito soltiro", url:"assets/imagens/solteiro/solteiro1.jpeg", cores:[
+                    {id:"cs-1", url:"assets/imagens/solteiro/solteiro1.jpeg", cor:""},
+                    {id:"cs-1", url:"assets/imagens/solteiro/solteiro2.jpeg", cor:""},
+                ], 
+                desc:[
 
-            ],
-            preco: 198.90
-        },
-    ]
-},
+                ],
+                preco: 198.90
+            },
+            {
+                id:"p-1", title:"Cobre leito soltiro", url:"assets/imagens/solteiro/solteiro3.jpeg", cores:[
+                    {id:"cs-1", url:"assets/imagens/solteiro/solteiro3.jpeg", cor:""},
+                ], 
+                desc:[
+
+                ],
+                preco: 198.90
+            },
+            {
+                id:"p-1", title:"Cobre leito soltiro", url:"assets/imagens/solteiro/solteiro4.jpeg", cores:[
+                    {id:"cs-1", url:"assets/imagens/solteiro/solteiro4.jpeg", cor:""},
+                    {id:"cs-1", url:"assets/imagens/solteiro/solteiro5.jpeg", cor:""},
+                ], 
+                desc:[
+
+                ],
+                preco: 198.90
+            },
+            {
+                id:"p-1", title:"Cobre leito soltiro", url:"assets/imagens/solteiro/solteiro6.jpeg", cores:[
+                    {id:"cs-1", url:"assets/imagens/solteiro/solteiro6.jpeg", cor:""},
+                ], 
+                desc:[
+
+                ],
+                preco: 198.90
+            },
+        ]
+    },
+    {id:3, title:"cortinas", products:[
+            {
+                id:"p-1", title:"Cobre leito soltiro", url:"assets/imagens/cortinas/cortina1.jpeg", cores:[
+                    {id:"cn-1", url:"assets/imagens/cortinas/cortina1.jpeg", cor:""},
+                    {id:"cn-2", url:"assets/imagens/cortinas/cortina2.jpeg", cor:""},
+                    {id:"cn-3", url:"assets/imagens/cortinas/cortina3.jpeg", cor:""},
+                ], 
+                desc:[
+
+                ],
+                preco: 198.90
+            },
+            {
+                id:"p-1", title:"Cobre leito soltiro", url:"assets/imagens/cortinas/cortina4.jpeg", cores:[
+                    {id:"cn-1", url:"assets/imagens/cortinas/cortina4.jpeg", cor:""},
+                    {id:"cn-2", url:"assets/imagens/cortinas/cortina5.jpeg", cor:""},
+                    {id:"cn-3", url:"assets/imagens/cortinas/cortina6.jpeg", cor:""},
+                ], 
+                desc:[
+
+                ],
+                preco: 198.90
+            },
+            {
+                id:"p-1", title:"Cobre leito soltiro", url:"assets/imagens/cortinas/cortina7.jpeg", cores:[
+                    {id:"cn-1", url:"assets/imagens/cortinas/cortina7.jpeg", cor:""},
+                    {id:"cn-2", url:"assets/imagens/cortinas/cortina8.jpeg", cor:""},
+                ], 
+                desc:[
+
+                ],
+                preco: 198.90
+            },
+            {
+                id:"p-1", title:"Cobre leito soltiro", url:"assets/imagens/cortinas/cortina9.jpeg", cores:[
+                    {id:"cn-1", url:"assets/imagens/cortinas/cortina9.jpeg", cor:""},
+                    {id:"cn-2", url:"assets/imagens/cortinas/cortina10.jpeg", cor:""},
+                ], 
+                desc:[
+
+                ],
+                preco: 198.90
+            },
+        ]
+    },
 ];
+
