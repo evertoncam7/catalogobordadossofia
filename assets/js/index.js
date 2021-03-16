@@ -22,12 +22,13 @@ function menu(conteinerr){
 
     const list = [
         {id:0, class:"menuItem", title:"Home"},
-        {id:1, class:"menuItem", title:"Cobreleito Casal"},
-        {id:2, class:"menuItem", title:"Cobreleito Solteiro"},
-        {id:3, class:"menuItem", title:"Cortinas"},
-        {id:4, class:"menuItem", title:"Coberdrom casal"},
-        {id:5, class:"menuItem-title", title:"MARKETPLACES"},
-        {id:6, class:"menuItem", title:"MERCADO LIVRE"},
+        {id:1, class:"menuItem", title:"Cobreleito Casal Queen"},
+        {id:2, class:"menuItem", title:"Cobreleito Casal King"},
+        {id:3, class:"menuItem", title:"Cobreleito Solteiro"},
+        {id:4, class:"menuItem", title:"Cortinas"},
+        {id:5, class:"menuItem", title:"Coberdrom casal"},
+        {id:6, class:"menuItem-title", title:"MARKETPLACES"},
+        {id:7, class:"menuItem", title:"MERCADO LIVRE"},
        
     ];
 
@@ -84,22 +85,15 @@ function menu(conteinerr){
         $(".menuItem").click(function(){
 
             const slug  = this.dataset.slug;
-            const uri = "/C:/Users/evert/Desktop/projetos/git_gitHub/bordadossofia/index.html";
-            const uri2 = "/C:/Users/evert/Desktop/projetos/git_gitHub/bordadossofia/";
-            // const uri = "https://evertoncam7.github.io/catalogobordadossofia/";
-            // const uri = "/catalogobordadossofia/";
 
             if (slug == "home") {
                 window.location.href = "index.html";
                 return;
             }
 
-            
                 window.location.href = "p.html#"+slug;
 
         });
-
-
 
         function slug(texto){
 
@@ -115,19 +109,10 @@ function menu(conteinerr){
 
         }
 
-    
-
 }
 
 
 function bxAddProducts(id, imagem, title, preco){
-
-    console.log([
-        id,
-        imagem,
-        title,
-        preco
-    ]);
 
     const cont = document.getElementById("id_container_p");
 

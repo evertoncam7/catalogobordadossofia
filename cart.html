@@ -302,15 +302,21 @@
         arrayCheckbox.map(function(value, indice){
 
             const el = document.getElementById(value.id);
-            el.innerHTML = "";
+            if (el) {
+                el.innerHTML = "";
 
-            const ch = document.createElement("input");
-            ch.setAttribute("type","checkbox");
-            ch.setAttribute("id","c-"+value.id);
-            ch.style.width = "20px";
-            ch.style.height = "20px";
-            el.appendChild(ch);
-            console.log(el);
+                const ch = document.createElement("input");
+                ch.setAttribute("type","checkbox");
+                ch.setAttribute("id","c-"+value.id);
+                ch.style.width = "20px";
+                ch.style.height = "20px";
+                el.appendChild(ch);
+                console.log(el);
+
+            }
+            
+
+            
         });
         
 
@@ -322,12 +328,15 @@
         })
         $("#id_bx_list_cart").animate({paddingTop:"10px"}, 200);
 
-        arrayCheckbox.map(function(value, indice){
-
-            const el = document.getElementById(value.id);
-            el.innerHTML = "";
-
-        });
+        if (arrayCheckbox) {
+            arrayCheckbox.map(function(value, indice){
+                const el = document.getElementById(value.id);
+                if (el) {
+                    el.innerHTML = "";
+                }
+            });
+        }
+        
 
         
         cr = true;

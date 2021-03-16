@@ -189,9 +189,17 @@
 
                         const btnmeli = document.createElement("div");
                         btnmeli.setAttribute("class","btnmeli");
-                        btnmeli.innerHTML = `<img class='img-meli' src='assets/imagens/Logotipo_MercadoLivre.png' />`;
+                        btnmeli.innerHTML = (!values.marketplaces.length ? ` ` : values.marketplaces.length == 1 ? `<img class='img-meli' src='${values.marketplaces[0].icon}' />` : `<span class="places icon-torsos-all"></span>`);
                         btnmeli.addEventListener("click", function(){
-                            window.location.href = "https://produto.mercadolivre.com.br/MLB-1253388881-cobre-leito-casal-queen-3-pcs-colcha-dupla-face-com-vies-_JM#position=1&type=item&tracking_id=2c45ddb4-7696-4b12-b2ad-296aa789e117";
+
+                            if (!values.marketplaces.length) {
+                                console.log("não tem marketplaces");
+                            }else if(values.marketplaces.length == 1){
+                                window.location.href = values.marketplaces[0].url;
+                            }else{
+                                window.location.href = "";
+                            }
+                            
                         });
                         bxcoresmeli.appendChild(btnmeli);
 
