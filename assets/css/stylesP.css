@@ -35,6 +35,8 @@ body{
     height: calc(100% - 80px);
     padding: 10px 10px 0px 10px;
     overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .card{
@@ -253,6 +255,25 @@ body{
 
 @media(min-width:600px){
     .cont{
-        width:900px;
+        width:1000px;
+        height: none;
     }
+
+    body{
+        height: none;
+    }
+
+    .menu{
+        width: 300px;
+    }
+
+    .contCard{
+        height: none;
+        overflow: hidden;
+    }
+
+    .card{
+        width: calc(33.3% - 10px);
+    }
+
 }
