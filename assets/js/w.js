@@ -22,7 +22,7 @@ btn_whatsapp.addEventListener("click", function(){
         // console.log(string);
     });
     
-    window.location.href = `https://api.whatsapp.com/send?phone=5516982011978&text=${string}%20(Quantidade%20de%20itens:%20${data.quantidade},%20Total%20do%20pedido:%20${currencyBrl(data.total)})`;
+    window.location.href = `https://api.whatsapp.com/send?phone=5516997660376&text=${string}%20(Quantidade%20de%20itens:%20${data.quantidade},%20Total%20do%20pedido:%20${currencyBrl(data.total)})`;
 
 });
 
