@@ -72,9 +72,6 @@
 
         </div>
 
-
-
-
     </div>
     
 </body>
@@ -114,7 +111,6 @@
             });
 
             
-
             const itemCarrosel = [
                 {id:1, title:"", image:"assets/imagens/carrosel/img1.jpg"},
                 {id:2, title:"", image:"assets/imagens/carrosel/img2.jpg"},
@@ -134,17 +130,16 @@
                     
                 });
 
+                $(".itemC:eq(0)").fadeIn();
 
             }
 
             carrosel();
 
-            $(".itemC:eq(0)").fadeIn();
-
             
 
+    
             function slide(){
-
 
                 if ($(".itemC:visible").next(".itemC").length) {
 
@@ -171,5 +166,18 @@
             });    
 
         });
+
     </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PM5BCRHQD8"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PM5BCRHQD8');
+    </script>
+
+
 </html>

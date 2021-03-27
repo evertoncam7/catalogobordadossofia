@@ -284,9 +284,12 @@ function currencyBrl(valor){
 }
 
 const whats = document.getElementById("whats");
-whats.addEventListener('click', function(){
-    window.location.href = `https://api.whatsapp.com/send?phone=5516997660376`;
-});
+if (whats) {
+    whats.addEventListener('click', function(){
+        window.location.href = `https://api.whatsapp.com/send?phone=5516997660376`;
+    });
+}
+
 
 
 
