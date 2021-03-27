@@ -130,7 +130,7 @@
             const seo = document.createElement("meta");
             seo.setAttribute("property", values.property);
             seo.setAttribute("content", values.content);
-            seo.setAttribute("id", values.id);
+            // seo.setAttribute("id", values.id);
             head.appendChild(seo);
         });
 
@@ -195,8 +195,8 @@
                         $(this).parent().children(".bollCollor").removeClass("bollActive");
                         $(this).addClass("bollActive");
 
-                        const testeseo = document.getElementById("seo-5");
-                        testeseo.content = values.url;
+                        // const testeseo = document.getElementById("seo-5");
+                        // testeseo.content = values.url;
 
                         const i = $("#id-img");
                         const u = values.url;
