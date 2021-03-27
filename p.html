@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/css/stylesP.css">
     <link rel="stylesheet" href="assets/icons2/styles.css">
 
-    <title>Produtos</title>
+    <title id="title-page">Produtos</title>
 
     <style>
         .icon-clipboard-1{
@@ -113,7 +113,9 @@
 
         
         let product = json.filter(function(values){
+            
             return values.title == s[1];
+            
         });
 
         // console.log(product);
@@ -123,6 +125,10 @@
         container_card.innerHTML = " ";
 
         if (product.length) {
+
+            const sp = product[0].title;
+            const titlePage = document.getElementById('title-page');
+            titlePage.innerHTML = sp;
 
             product[0].products.map(function(values, indice){
 

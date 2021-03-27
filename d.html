@@ -6,7 +6,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/icons/styles.css">
-    <title>Descrição</title>
+    <title id="title-page-d">Descrição</title>
     <style>
 
         *{
@@ -19,7 +19,6 @@
         .container_d{
             position: absolute;
             width: 100%;
-            
             background: #f9f9f9;
         }
 
@@ -110,6 +109,7 @@
     const ar = hashs.split("#");
     let categoria = "";
     let product = "";
+    const tpd = document.getElementById('title-page-d');
 
     function search(){
 
@@ -139,6 +139,7 @@
             const title = document.createElement("div");
             title.setAttribute("class","title");
             title.innerHTML = product[0].title;
+            tpd.innerHTML = product[0].title;
             bxdecription.appendChild(title);
 
             const valor = document.createElement("div");
